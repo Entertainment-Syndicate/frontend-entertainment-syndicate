@@ -1,0 +1,10 @@
+.jumbotron {
+  margin-bottom: 0;
+}
+.header-button {
+  display: flex;
+  align-items: center;
+}
+.header-button * {
+  margin: 0 10px;
+}
