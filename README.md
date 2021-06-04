@@ -25,3 +25,8 @@ As the name indicates this website is about entertainment and fun, the main idea
 ## Domain Modeling
 
 ![Domain Modeling](https://user-images.githubusercontent.com/78267388/120847507-3faf4600-c57c-11eb-9677-9bcc1094a709.png)
+
+## Database Schema Diagram
+
+![Database Schema Diagram](https://user-images.githubusercontent.com/78267388/120851398-7471cc00-c581-11eb-889b-b7adf84c936e.png)
+
