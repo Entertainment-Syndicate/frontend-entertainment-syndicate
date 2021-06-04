@@ -22,8 +22,6 @@ As the name indicates this website is about entertainment and fun, the main idea
 | :-------------                                                                                                      | :-------------------------------------- |
 | ![Profile](https://user-images.githubusercontent.com/78267388/120844684-6f5c4f00-c578-11eb-9d73-5478dc48fcb8.png)   | ![About us](https://user-images.githubusercontent.com/78267388/120844748-88fd9680-c578-11eb-8a41-9e0623b9fdc7.png) |
 
+## Domain Modeling
 
-
-
-
-
+![Domain Modeling](https://user-images.githubusercontent.com/78267388/120847507-3faf4600-c57c-11eb-9677-9bcc1094a709.png)
