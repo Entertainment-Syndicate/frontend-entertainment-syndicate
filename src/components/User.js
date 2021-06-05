@@ -12,9 +12,9 @@ const User = () => {
   // Creating function for feedback (related to Database)
 
 
-  if (isLoading) {
-    return <div>Loading ...</div>;
-  }
+  // if (isLoading) {
+  //   return <div>Loading ...</div>;
+  // }
 
   return (
     // isAuthenticated && (
