@@ -4,4 +4,13 @@ a{
 
 a:hover{
   color:darkgrey;
+  
+}
+
+.navs{
+  padding-left: 90px ;
+}
+
+#button{
+  padding-left: 30px ;
 }
