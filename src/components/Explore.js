@@ -61,10 +61,16 @@ export class Explore extends Component {
                         </Form> */}
                     </Navbar.Collapse>
                 </Navbar>
+                <div>
+                    <Anime />
+                </div>
+                <div>
+                    <Movie />
+                </div>
+                <div>
+                    <Game />
+                </div>
 
-                <Anime />
-                <Movie />
-                <Game />
             </>
         )
     }
