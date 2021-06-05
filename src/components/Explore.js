@@ -8,9 +8,15 @@ import Movie from './Movie'
 
 export class Explore extends Component {
 
-    // constructor(props){
-    //     super(props);
-    // }
+    constructor(props){
+        super(props);
+        this.state = {
+            showMovies : false,
+            showAnime : false,
+            showGames : false
+
+        }
+    }
 
 
     // Sending a request to the back-end for rendering the data 
@@ -20,10 +26,29 @@ export class Explore extends Component {
     // Need a function for rendering everything
 
     // Need a function for rendering all movies
+    renderMovie = () => {
+        this.setState ({
+            showMovies: true
+
+        })
+    }
+    
 
     // Need a function for rendering all Anime
+    renderAnime = () => {
+        this.setState ({
+            showAnime: true
+
+        })
+    }
 
     // Need a function for rendering all Games
+    renderAnime = () => {
+        this.setState ({
+            showGames: true
+
+        })
+    }
 
     // Create a function to add the slected item to my list (related to Database)
 
@@ -40,16 +65,16 @@ export class Explore extends Component {
                             <NavDropdown title="Search By Category" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">All</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Drama</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3">Fantasy</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.3">Horror</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Comedy</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3">Sci-Fi</NavDropdown.Item>
+                               
                             </NavDropdown>
-                            <Button className='buttons'>All</Button>
-                            <Button className='buttons'>Anime</Button>
-                            <Button className='buttons'>Movies</Button>
-                            <Button className='buttons'>Games</Button>
+                            {/* Button --- Radio Button */}
+                            <Button  className='buttons'>All</Button>
+                            <Button  onClick={this.renderAnime} className='buttons'>Anime</Button>
+                            <Button onClick={this.renderMovie} className='buttons'>Movies</Button>
+                            <Button  onClick={this.renderGames} className='buttons'>Games</Button>
                             {/* <Nav.Link href="https://www.google.com/">All</Nav.Link>
                             <Nav.Link href="#home">Anime</Nav.Link>
                             <Nav.Link href="#link">Movies</Nav.Link>
@@ -62,13 +87,13 @@ export class Explore extends Component {
                     </Navbar.Collapse>
                 </Navbar>
                 <div>
-                    <Anime />
+                     {this.state.showAnime && <Anime />}
                 </div>
                 <div>
-                    <Movie />
+                    {this.state.showMovies &&  <Movie />}
                 </div>
                 <div>
-                    <Game />
+                {this.state.showGames && <Game />}
                 </div>
 
             </>
