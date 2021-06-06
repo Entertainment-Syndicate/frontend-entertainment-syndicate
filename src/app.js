@@ -16,44 +16,42 @@ class App extends React.Component {
     console.log('app', this.props);
     const { isAuthenticated } = this.props.auth0;
     return (
-      <>
+      <div>
         <Router>
           {/* <IsLoadingAndError> */}
-            <Header />
-            <Switch>
-              {/* <Route path="/">
+          <Header />
+          <Switch>
+            {/* <Route path="/">
                 Home
               </Route> */}
-              
-              <Route path="/explore">
-                <Explore/>
-              </Route>
-              
-              <Route path="/user">
-               <User/>
-              </Route>
-              
-              <Route path="/about-us">
-                <AboutUs/>
-              </Route>
-              
-              <Route>
-              {isAuthenticated ? <LogoutButton/> : <Login/>}
-              </Route>
 
-              {/* <Route exact path="/"> */}
-                {/* /* TODO: if the user is logged in, render the `MyFavoriteBooks` component, if they are not, render the `Login` component */}
-                 {/* {isAuthenticated ? <MyFavoriteBooks /> : <Login />} */}
-              {/* </Route> 
+            <Route path="/explore">
+              <Explore />
+            </Route>
+
+            <Route path="/user">
+              <User />
+            </Route>
+
+            <Route path="/about-us">
+              <AboutUs />
+            </Route>
+
+            <Route>{isAuthenticated ? <LogoutButton /> : <Login />}</Route>
+
+            {/* <Route exact path="/"> */}
+            {/* /* TODO: if the user is logged in, render the `MyFavoriteBooks` component, if they are not, render the `Login` component */}
+            {/* {isAuthenticated ? <MyFavoriteBooks /> : <Login />} */}
+            {/* </Route> 
               <Route exact path="/user">
                 TODO: add a route with a path of '/profile' that renders a `Profile` component
                 <User />
               </Route>  */}
-            </Switch>
-            <Footer />
+          </Switch>
+          <Footer />
           {/* </IsLoadingAndError> */}
         </Router>
-      </>
+      </div>
     );
   }
 }
