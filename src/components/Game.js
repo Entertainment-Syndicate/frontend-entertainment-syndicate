@@ -87,7 +87,7 @@ export class Game extends Component {
             transitionDuration={300}
           >
             {this.props.gameData.map((item2) => {
-              console.log('hello Anime');
+              // console.log('hello Anime');
               return item2.map((item, idx) => {
                 return (
                   <CardGroup key={idx} style={{ width: '18rem' }}>
@@ -107,7 +107,7 @@ export class Game extends Component {
           <div>
             <CardDeck>
               {this.props.gameData.map((item2) => {
-                console.log('hello Anime');
+                // console.log('hello Anime');
                 return item2.map((item, idx) => {
                   return (
                     <CardGroup key={idx} style={{ width: '18rem' }}>

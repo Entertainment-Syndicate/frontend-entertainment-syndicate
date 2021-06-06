@@ -42,7 +42,8 @@ export class Explore extends Component {
     };
   }
 
-  // Sending a request to the back-end for rendering the data
+  // 1-Sending a request to the back-end for rendering the data
+  // first request
   componentDidMount = () => {
     axios.get(`http://localhost:3001/fetchAllData`).then((res) => {
       this.setState({
@@ -59,20 +60,25 @@ export class Explore extends Component {
     // console.log(this.state.animeData);
   };
 
+  // 2- target from the radio
   selectType = async (e) => {
-    console.log(e.currentTarget.value);
+    // console.log(e.currentTarget.value);
     if (e.currentTarget.value == 0) {
+      // 3-
       await this.renderAll();
     } else if (e.currentTarget.value == 1) {
+      // 3-
       await this.renderAnime();
     } else if (e.currentTarget.value == 2) {
+      // 3-
       await this.renderMovie();
     } else if (e.currentTarget.value == 3) {
+      // 3-
       await this.renderGame();
     }
   };
 
-  // Need a function for rendering everything
+  // 3-function for rendering everything
   renderAll = async () => {
     await this.setState({
       showAnime: true,
@@ -81,7 +87,7 @@ export class Explore extends Component {
     });
   };
 
-  // Need a function for rendering all Anime
+  // 3-Need a function for rendering all Anime
   renderAnime = async () => {
     await this.setState({
       showAnime: true,
@@ -90,7 +96,7 @@ export class Explore extends Component {
     });
   };
 
-  // Need a function for rendering all movies
+  // 3-Need a function for rendering all movies
   renderMovie = async () => {
     await this.setState({
       showAnime: false,
@@ -99,7 +105,7 @@ export class Explore extends Component {
     });
   };
 
-  // Need a function for rendering all Games
+  // 3-Need a function for rendering all Games
   renderGame = async () => {
     await this.setState({
       showAnime: false,
@@ -108,8 +114,9 @@ export class Explore extends Component {
     });
   };
 
+  // 4-Function for Filtering by Category
   selectCategory = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     let allData = this.state.allData;
 
     if (e.target.value == 'All') {
@@ -143,13 +150,15 @@ export class Explore extends Component {
         gameData: [allData[11]],
       });
     }
-    console.log(
-      this.state.animeData,
-      this.state.movieData,
-      this.state.gameData
-    );
+    // console.log(
+    //   this.state.animeData,
+    //   this.state.movieData,
+    //   this.state.gameData
+    // );
   };
 
+  // 5- Function Passed for adding to favorite inside Modal
+  //  Second request
   addToFavoriteHandler = async (item) => {
     let responseFavorite = await axios.post('http://localhost:3001/favorite', {
       favouriteData: {
@@ -160,8 +169,9 @@ export class Explore extends Component {
     this.setState({
       favoriteList: responseFavorite.data,
     });
-    // console.log(responseFavorite);
+    // console.log(this.state.favoriteList);
   };
+
   render() {
     return (
       <div>
@@ -169,6 +179,7 @@ export class Explore extends Component {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
+              {/* Radio for Type filtering */}
               <ButtonGroup>
                 {this.state.radios.map((radio, idx) => (
                   <Button
@@ -178,24 +189,29 @@ export class Explore extends Component {
                     // variant={'outline-success'}
                     name="radio"
                     value={radio.value}
+                    // Functions from Radio Component by Default
                     checked={this.state.radioValue === radio.value}
                     onChange={(e) =>
                       this.setState({
                         radioValue: e.currentTarget.value,
                       })
                     }
+                    // 2-
                     onClick={this.selectType}
                   >
                     {radio.name}
                   </Button>
                 ))}
               </ButtonGroup>
+
+              {/* Form for Category Filtering */}
               <Form>
                 <Form.Group controlId="formBasicEmail">
                   <Form.Control
                     as="select"
                     custom
                     name="select"
+                    // 4-
                     onChange={this.selectCategory}
                   >
                     <option value="" disabled defaultValue>
@@ -212,10 +228,12 @@ export class Explore extends Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-
+        {/* show data  or loading spiner  */}
         {this.state.showData ? (
           <div>
             <div>
+              {/* show each type data if exist */}
+
               {this.state.showAnime && (
                 <div>
                   <h2>Anime</h2>
@@ -224,12 +242,15 @@ export class Explore extends Component {
                     showAnime={this.state.showAnime}
                     showMovie={this.state.showMovie}
                     showGame={this.state.showGame}
+                    // 5- Function Passed for adding to favorite inside Modal
                     addToFavoriteHandler={this.addToFavoriteHandler}
                   />
                 </div>
               )}
             </div>
             <div>
+              {/* show each type data if exist */}
+
               {this.state.showMovie && (
                 <div>
                   <h2>Movies</h2>
@@ -238,12 +259,15 @@ export class Explore extends Component {
                     showAnime={this.state.showAnime}
                     showMovie={this.state.showMovie}
                     showGame={this.state.showGame}
+                    // 5- Function Passed for adding to favorite inside Modal
                     addToFavoriteHandler={this.addToFavoriteHandler}
                   />
                 </div>
               )}
             </div>
             <div>
+              {/* show each type data if exist */}
+
               {this.state.showGame && (
                 <div>
                   <h2>Games</h2>
@@ -252,6 +276,7 @@ export class Explore extends Component {
                     showAnime={this.state.showAnime}
                     showMovie={this.state.showMovie}
                     showGame={this.state.showGame}
+                    // 5- Function Passed for adding to favorite inside Modal
                     addToFavoriteHandler={this.addToFavoriteHandler}
                   />
                 </div>

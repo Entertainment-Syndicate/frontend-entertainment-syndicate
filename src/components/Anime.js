@@ -37,6 +37,7 @@ export class Anime extends Component {
   render() {
     return (
       <div>
+        {/* If All types must be shown  => render by Carousel else render by Cards*/}
         {this.props.showAnime && this.props.showMovie && this.props.showGame ? (
           <Carousel
             additionalTransfrom={0}
@@ -89,7 +90,7 @@ export class Anime extends Component {
             transitionDuration={300}
           >
             {this.props.animeData.map((item2) => {
-              console.log('hello Anime');
+              // console.log('hello Anime');
               return item2.map((item, idx) => {
                 return (
                   <CardGroup key={idx} style={{ width: '18rem' }}>
@@ -109,7 +110,7 @@ export class Anime extends Component {
           <div>
             <CardDeck>
               {this.props.animeData.map((item2) => {
-                console.log('hello Anime');
+                // console.log('hello Anime');
                 return item2.map((item, idx) => {
                   return (
                     <CardGroup key={idx} style={{ width: '18rem' }}>
@@ -128,6 +129,7 @@ export class Anime extends Component {
           </div>
         )}
 
+        {/* Modal */}
         <Modal show={this.state.displayModal} onHide={this.hideModal}>
           <Modal.Header closeButton>
             <Modal.Title>{this.state.item.title}</Modal.Title>
@@ -157,6 +159,7 @@ export class Anime extends Component {
             </Button>
             <Button
               variant="primary"
+              // 5- Add to Favorite Button (to database)
               onClick={() => {
                 this.props.addToFavoriteHandler(this.state.item);
                 this.setState({
