@@ -13,7 +13,6 @@ import Anime from './Anime';
 import Game from './Game';
 import Movie from './Movie';
 import axios from 'axios';
-// import './explore.css';
 
 export class Explore extends Component {
   constructor(props) {
@@ -148,15 +147,10 @@ export class Explore extends Component {
     );
   };
 
-  // Need a function for rendering based on what category we select
-
-  // Create a function to add the selected item to my list (related to Database)
-
   render() {
     return (
       <div>
         <Navbar bg="light" expand="lg">
-          {/* <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand> */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
@@ -183,14 +177,13 @@ export class Explore extends Component {
               </ButtonGroup>
               <Form>
                 <Form.Group controlId="formBasicEmail">
-                  {/* <Form.Label>Category</Form.Label> */}
                   <Form.Control
                     as="select"
                     custom
                     name="select"
                     onChange={this.selectCategory}
                   >
-                    <option value="" disabled selected>
+                    <option value="" disabled defaultValue>
                       Select your category
                     </option>
                     <option value="All">All</option>
@@ -211,7 +204,12 @@ export class Explore extends Component {
               {this.state.showAnime && (
                 <div>
                   <h2>Anime</h2>
-                  <Anime animeData={this.state.animeData} />
+                  <Anime
+                    animeData={this.state.animeData}
+                    showAnime={this.state.showAnime}
+                    showMovie={this.state.showMovie}
+                    showGame={this.state.showGame}
+                  />
                 </div>
               )}
             </div>
@@ -219,7 +217,12 @@ export class Explore extends Component {
               {this.state.showMovie && (
                 <div>
                   <h2>Movies</h2>
-                  <Movie movieData={this.state.movieData} />
+                  <Movie
+                    movieData={this.state.movieData}
+                    showAnime={this.state.showAnime}
+                    showMovie={this.state.showMovie}
+                    showGame={this.state.showGame}
+                  />
                 </div>
               )}
             </div>
@@ -227,7 +230,12 @@ export class Explore extends Component {
               {this.state.showGame && (
                 <div>
                   <h2>Games</h2>
-                  <Game gameData={this.state.gameData} />
+                  <Game
+                    gameData={this.state.gameData}
+                    showAnime={this.state.showAnime}
+                    showMovie={this.state.showMovie}
+                    showGame={this.state.showGame}
+                  />
                 </div>
               )}
             </div>
@@ -244,30 +252,3 @@ export class Explore extends Component {
 }
 
 export default Explore;
-
-// const radios = [
-//   { name: 'Active', value: '1' },
-//   { name: 'Hello', value: '2' },
-//   { name: 'Radio', value: '3' },
-// ];
-
-// return (
-//   <>
-//     <ButtonGroup>
-//       {radios.map((radio, idx) => (
-//         <ToggleButton
-//           key={idx}
-//           id={`radio-${idx}`}
-//           type="radio"
-//           variant={idx % 2 ? 'outline-success' : 'outline-danger'}
-//           name="radio"
-//           value={radio.value}
-//           checked={radioValue === radio.value}
-//           onChange={(e) => setRadioValue(e.currentTarget.value)}
-//         >
-//           {radio.name}
-//         </ToggleButton>
-//       ))}
-//     </ButtonGroup>
-//   </>
-// );
