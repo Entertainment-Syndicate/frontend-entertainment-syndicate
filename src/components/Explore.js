@@ -3,10 +3,11 @@ import React, { Component } from 'react';
 import {
   Navbar,
   Nav,
-  NavDropdown,
   Button,
   ButtonGroup,
   ToggleButton,
+  Spinner,
+  Form,
 } from 'react-bootstrap';
 import Anime from './Anime';
 import Game from './Game';
@@ -26,7 +27,8 @@ export class Explore extends Component {
       showAnime: false,
       showMovie: false,
       showGame: false,
-      renderedData: [],
+
+      showData: false,
 
       radios: [
         { name: 'All', value: '0' },
@@ -43,13 +45,13 @@ export class Explore extends Component {
     axios.get(`http://localhost:3001/fetchAllData`).then((res) => {
       this.setState({
         allData: res.data,
+        showData: true,
 
         animeData: [res.data[0], res.data[1], res.data[2], res.data[3]],
         movieData: [res.data[4], res.data[5], res.data[6], res.data[7]],
         gameData: [res.data[8], res.data[9], res.data[10], res.data[11]],
-
-        renderedData: res.data,
       });
+      this.renderAll();
     });
 
     // console.log(this.state.animeData);
@@ -71,45 +73,79 @@ export class Explore extends Component {
   // Need a function for rendering everything
   renderAll = async () => {
     await this.setState({
-      renderedData: this.state.allData,
       showAnime: true,
       showMovie: true,
       showGame: true,
     });
-    console.log(this.state.renderedData);
   };
 
   // Need a function for rendering all Anime
   renderAnime = async () => {
     await this.setState({
-      renderedData: this.state.animeData,
       showAnime: true,
       showMovie: false,
       showGame: false,
     });
-    console.log(this.state.renderedData);
   };
 
   // Need a function for rendering all movies
   renderMovie = async () => {
     await this.setState({
-      renderedData: this.state.movieData,
       showAnime: false,
       showMovie: true,
       showGame: false,
     });
-    console.log(this.state.renderedData);
   };
 
   // Need a function for rendering all Games
   renderGame = async () => {
     await this.setState({
-      renderedData: this.state.gameData,
       showAnime: false,
       showMovie: false,
       showGame: true,
     });
-    console.log(this.state.renderedData);
+  };
+
+  selectCategory = (e) => {
+    console.log(e.target.value);
+    let allData = this.state.allData;
+
+    if (e.target.value == 'All') {
+      this.setState({
+        animeData: [allData[0], allData[1], allData[2], allData[3]],
+        movieData: [allData[4], allData[5], allData[6], allData[7]],
+        gameData: [allData[8], allData[9], allData[10], allData[11]],
+      });
+    } else if (e.target.value == 'Action') {
+      this.setState({
+        animeData: [allData[0]],
+        movieData: [allData[4]],
+        gameData: [allData[8]],
+      });
+    } else if (e.target.value == 'Fantasy') {
+      this.setState({
+        animeData: [allData[1]],
+        movieData: [allData[5]],
+        gameData: [allData[9]],
+      });
+    } else if (e.target.value == 'Horror') {
+      this.setState({
+        animeData: [allData[2]],
+        movieData: [allData[6]],
+        gameData: [allData[10]],
+      });
+    } else if (e.target.value == 'Sci-Fi') {
+      this.setState({
+        animeData: [allData[3]],
+        movieData: [allData[7]],
+        gameData: [allData[11]],
+      });
+    }
+    console.log(
+      this.state.animeData,
+      this.state.movieData,
+      this.state.gameData
+    );
   };
 
   // Need a function for rendering based on what category we select
@@ -118,7 +154,7 @@ export class Explore extends Component {
 
   render() {
     return (
-      <>
+      <div>
         <Navbar bg="light" expand="lg">
           {/* <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand> */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -145,43 +181,64 @@ export class Explore extends Component {
                   </Button>
                 ))}
               </ButtonGroup>
-
-              <NavDropdown title="Search By Category" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">All</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Fantasy</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Horror</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Sci-Fi</NavDropdown.Item>
-              </NavDropdown>
+              <Form>
+                <Form.Group controlId="formBasicEmail">
+                  {/* <Form.Label>Category</Form.Label> */}
+                  <Form.Control
+                    as="select"
+                    custom
+                    name="select"
+                    onChange={this.selectCategory}
+                  >
+                    <option value="" disabled selected>
+                      Select your category
+                    </option>
+                    <option value="All">All</option>
+                    <option value="Action">Action</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                  </Form.Control>
+                </Form.Group>
+              </Form>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
 
-        <div>
-          {this.state.showAnime && (
-            <>
-              <h2>Anime</h2>
-              <Anime animeData={this.state.animeData} />
-            </>
-          )}
-        </div>
-        <div>
-          {this.state.showMovie && (
-            <>
-              <h2>Movies</h2>
-              <Movie movieData={this.state.movieData} />
-            </>
-          )}
-        </div>
-        <div>
-          {this.state.showGame && (
-            <>
-              <h2>Games</h2>
-              <Game gameData={this.state.gameData} />
-            </>
-          )}
-        </div>
-      </>
+        {this.state.showData ? (
+          <div>
+            <div>
+              {this.state.showAnime && (
+                <div>
+                  <h2>Anime</h2>
+                  <Anime animeData={this.state.animeData} />
+                </div>
+              )}
+            </div>
+            <div>
+              {this.state.showMovie && (
+                <div>
+                  <h2>Movies</h2>
+                  <Movie movieData={this.state.movieData} />
+                </div>
+              )}
+            </div>
+            <div>
+              {this.state.showGame && (
+                <div>
+                  <h2>Games</h2>
+                  <Game gameData={this.state.gameData} />
+                </div>
+              )}
+            </div>
+          </div>
+        ) : (
+          <div>
+            <Spinner animation="grow" size="sm" />
+            <Spinner animation="grow" />
+          </div>
+        )}
+      </div>
     );
   }
 }
