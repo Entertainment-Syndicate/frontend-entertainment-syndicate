@@ -13,6 +13,7 @@ import Anime from './Anime';
 import Game from './Game';
 import Movie from './Movie';
 import axios from 'axios';
+import { withAuth0 } from '@auth0/auth0-react';
 
 export class Explore extends Component {
   constructor(props) {
@@ -28,6 +29,8 @@ export class Explore extends Component {
       showGame: false,
 
       showData: false,
+
+      favoriteList: [],
 
       radios: [
         { name: 'All', value: '0' },
@@ -147,6 +150,18 @@ export class Explore extends Component {
     );
   };
 
+  addToFavoriteHandler = async (item) => {
+    let responseFavorite = await axios.post('http://localhost:3001/favorite', {
+      favouriteData: {
+        favoriteItem: item,
+        email: this.props.auth0.user.email,
+      },
+    });
+    this.setState({
+      favoriteList: responseFavorite.data,
+    });
+    // console.log(responseFavorite);
+  };
   render() {
     return (
       <div>
@@ -209,6 +224,7 @@ export class Explore extends Component {
                     showAnime={this.state.showAnime}
                     showMovie={this.state.showMovie}
                     showGame={this.state.showGame}
+                    addToFavoriteHandler={this.addToFavoriteHandler}
                   />
                 </div>
               )}
@@ -222,6 +238,7 @@ export class Explore extends Component {
                     showAnime={this.state.showAnime}
                     showMovie={this.state.showMovie}
                     showGame={this.state.showGame}
+                    addToFavoriteHandler={this.addToFavoriteHandler}
                   />
                 </div>
               )}
@@ -235,6 +252,7 @@ export class Explore extends Component {
                     showAnime={this.state.showAnime}
                     showMovie={this.state.showMovie}
                     showGame={this.state.showGame}
+                    addToFavoriteHandler={this.addToFavoriteHandler}
                   />
                 </div>
               )}
@@ -251,4 +269,4 @@ export class Explore extends Component {
   }
 }
 
-export default Explore;
+export default withAuth0(Explore);

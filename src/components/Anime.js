@@ -8,7 +8,7 @@ import {
   CardDeck,
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'semantic-ui-css/semantic.min.css';
+// import 'semantic-ui-css/semantic.min.css';
 import 'react-multi-carousel/lib/styles.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -33,6 +33,7 @@ export class Anime extends Component {
       displayModal: false,
     });
   };
+
   render() {
     return (
       <div>
@@ -154,7 +155,17 @@ export class Anime extends Component {
             <Button variant="secondary" onClick={this.hideModal}>
               Close
             </Button>
-            <Button variant="primary">Add to Favorite</Button>
+            <Button
+              variant="primary"
+              onClick={() => {
+                this.props.addToFavoriteHandler(this.state.item);
+                this.setState({
+                  displayModal: false,
+                });
+              }}
+            >
+              Add to Favorite
+            </Button>
           </Modal.Footer>
         </Modal>
       </div>
