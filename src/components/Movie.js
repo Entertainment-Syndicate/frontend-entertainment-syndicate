@@ -88,7 +88,7 @@ export class Movie extends Component {
             transitionDuration={300}
           >
             {this.props.movieData.map((item2) => {
-              console.log('hello Anime');
+              // console.log('hello Anime');
               return item2.map((item, idx) => {
                 return (
                   <CardGroup key={idx} style={{ width: '18rem' }}>
@@ -108,7 +108,7 @@ export class Movie extends Component {
           <div>
             <CardDeck>
               {this.props.movieData.map((item2) => {
-                console.log('hello Anime');
+                // console.log('hello Anime');
                 return item2.map((item, idx) => {
                   return (
                     <CardGroup key={idx} style={{ width: '18rem' }}>
@@ -152,8 +152,6 @@ export class Movie extends Component {
               Vote Average & Vote Count: {this.state.item.voteAverage} ,
               {this.state.item.voteCount}
             </p>
-
-            <a href={this.state.item.watchURL}>Watch Here</a>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={this.hideModal}>
