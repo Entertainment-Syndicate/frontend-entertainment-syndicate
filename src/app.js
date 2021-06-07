@@ -9,7 +9,8 @@ import Login from './login';
 import User from './components/User';
 import LogoutButton from './components/LogOutButton';
 import Explore from './components/Explore';
-import { AboutUs } from './components/AboutUs';
+import AboutUs from './components/AboutUs';
+import Home from './components/Home';
 
 class App extends React.Component {
   render() {
@@ -21,9 +22,9 @@ class App extends React.Component {
           {/* <IsLoadingAndError> */}
           <Header />
           <Switch>
-            {/* <Route path="/">
-                Home
-              </Route> */}
+            <Route path="/" exact>
+              <Home />
+            </Route>
 
             <Route path="/explore">
               <Explore />
