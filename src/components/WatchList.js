@@ -19,7 +19,7 @@ class WatchList extends Component {
       .then((res) => {
         let animeArr = res.data.results.splice(0, 20);
         let randomNumber1 = Math.floor(Math.random() * 10);
-        let randomNumber2 = Math.floor(Math.random() * (20 - 10 + 1)) + 10;
+        let randomNumber2 = Math.floor(Math.random() * (19 - 10 + 1)) + 10;
         this.setState({
           randomAnime1: animeArr[randomNumber1],
           randomAnime2: animeArr[randomNumber2],
@@ -33,7 +33,7 @@ class WatchList extends Component {
       .then((res) => {
         let movieArr = res.data.results.splice(0, 20);
         let randomNumber1 = Math.floor(Math.random() * 10);
-        let randomNumber2 = Math.floor(Math.random() * (20 - 10 + 1)) + 10;
+        let randomNumber2 = Math.floor(Math.random() * (19 - 10 + 1)) + 10;
         this.setState({
           randomMovie1: movieArr[randomNumber1],
           randomMovie2: movieArr[randomNumber2],
@@ -58,56 +58,50 @@ class WatchList extends Component {
   render() {
     return (
       <div>
-        {this.state.randomMovie2 && (
-          <div>
-            <h2>Watch This</h2>
-            <CardGroup style={{ width: '80rem' }}>
-              <Card>
-                <Card.Img
-                  variant="top"
-                  src={this.state.randomAnime1.image_url}
-                />
+        {/* {this.state.randomMovie2 && this.state.randomMovie2.length && ( */}
+        <div>
+          <h2>Watch This</h2>
+          <CardGroup style={{ width: '80rem' }}>
+            <Card>
+              <Card.Img variant="top" src={this.state.randomAnime1.image_url} />
 
-                <Card.Body>
-                  <Card.Title> {this.state.randomAnime1.title}</Card.Title>
-                </Card.Body>
-              </Card>
+              <Card.Body>
+                <Card.Title> {this.state.randomAnime1.title}</Card.Title>
+              </Card.Body>
+            </Card>
 
-              <Card>
-                <Card.Img
-                  variant="top"
-                  src={this.state.randomAnime2.image_url}
-                />
+            <Card>
+              <Card.Img variant="top" src={this.state.randomAnime2.image_url} />
 
-                <Card.Body>
-                  <Card.Title> {this.state.randomAnime2.title}</Card.Title>
-                </Card.Body>
-              </Card>
+              <Card.Body>
+                <Card.Title> {this.state.randomAnime2.title}</Card.Title>
+              </Card.Body>
+            </Card>
 
-              <Card>
-                <Card.Img
-                  variant="top"
-                  src={`https://image.tmdb.org/t/p/w500${this.state.randomMovie1.poster_path}`}
-                />
+            <Card>
+              <Card.Img
+                variant="top"
+                src={`https://image.tmdb.org/t/p/w500${this.state.randomMovie1.poster_path}`}
+              />
 
-                <Card.Body>
-                  <Card.Title> {this.state.randomMovie1.title}</Card.Title>
-                </Card.Body>
-              </Card>
+              <Card.Body>
+                <Card.Title> {this.state.randomMovie1.title}</Card.Title>
+              </Card.Body>
+            </Card>
 
-              <Card>
-                <Card.Img
-                  variant="top"
-                  src={`https://image.tmdb.org/t/p/w500${this.state.randomMovie2.poster_path}`}
-                />
+            <Card>
+              <Card.Img
+                variant="top"
+                src={`https://image.tmdb.org/t/p/w500${this.state.randomMovie2.poster_path}`}
+              />
 
-                <Card.Body>
-                  <Card.Title> {this.state.randomMovie2.title}</Card.Title>
-                </Card.Body>
-              </Card>
-            </CardGroup>
-          </div>
-        )}
+              <Card.Body>
+                <Card.Title> {this.state.randomMovie2.title}</Card.Title>
+              </Card.Body>
+            </Card>
+          </CardGroup>
+        </div>
+        {/* )} */}
       </div>
     );
   }
