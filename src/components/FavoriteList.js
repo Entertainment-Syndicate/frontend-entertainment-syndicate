@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, Button, CardGroup, CardDeck } from 'react-bootstrap';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
+import Feedback from './Feedback';
 
 export class FavoriteList extends Component {
   constructor(props) {
@@ -11,6 +12,11 @@ export class FavoriteList extends Component {
       favoriteAnime: [],
       favoriteMovie: [],
       favoriteGame: [],
+
+      index: '',
+      type: '',
+      feedback: '',
+      feedbackModal: false,
     };
   }
 
@@ -55,14 +61,64 @@ export class FavoriteList extends Component {
     });
   };
 
-  addReview = async (event) => {
-    event.preventDefault();
-    // fillter for the index , and take data on change   another function ?
-
-    // axios index put , send the email
-    this.state({
-      //udate the state after creating it
+  showFeedbackModal = (idx, feedback, type) => {
+    this.setState({
+      feedbackModal: true,
+      feedback: feedback,
+      type: type,
+      index: idx,
     });
+  };
+
+  hideFeedbackModal = () => {
+    this.setState({
+      feedbackModal: false,
+    });
+  };
+
+  changeFeedback = (e) => {
+    // console.log(' hello onChange');
+    this.setState({
+      feedback: e.target.value,
+    });
+    // console.log(this.state.feedback);
+  };
+
+  // 8 update feedback
+  //5th req
+  updateFeedback = async () => {
+    // console.log('Inside update');
+    let type = this.state.type;
+    let index = this.state.index;
+    let { user } = this.props.auth0;
+    let feedback = this.state.feedback;
+    console.log(feedback);
+
+    let updatedFeedback = await axios.put(
+      `http://localhost:3001/feedback/${index}`,
+      {
+        email: user.email,
+        type: type,
+        feedback: feedback,
+      }
+    );
+    this.setState({
+      favoriteList: updatedFeedback.data,
+      favoriteAnime: updatedFeedback.data.favoriteAnime,
+      favoriteMovie: updatedFeedback.data.favoriteMovie,
+      favoriteGame: updatedFeedback.data.favoriteGame,
+    });
+
+    this.hideFeedbackModal();
+  };
+
+  // 9 update(delete) feedback
+  //5th req
+  deleteFeedback = async () => {
+    await this.setState({
+      feedback: '',
+    });
+    this.updateFeedback();
   };
 
   render() {
@@ -100,7 +156,13 @@ export class FavoriteList extends Component {
                         {/* add input field  on submiit and a place to put it and the  && */}
                         <Button
                           variant="primary"
-                          onClick={() => this.addReview(idx)}
+                          onClick={() =>
+                            this.showFeedbackModal(
+                              idx,
+                              item.feedback,
+                              item.type
+                            )
+                          }
                         >
                           feedback
                         </Button>
@@ -144,7 +206,13 @@ export class FavoriteList extends Component {
                         {/* add input field  on submiit and a place to put it and the  && */}
                         <Button
                           variant="primary"
-                          onClick={() => this.addReview(idx)}
+                          onClick={() =>
+                            this.showFeedbackModal(
+                              idx,
+                              item.feedback,
+                              item.type
+                            )
+                          }
                         >
                           feedback
                         </Button>
@@ -188,7 +256,13 @@ export class FavoriteList extends Component {
                         {/* add input field  on submiit and a place to put it and the  && */}
                         <Button
                           variant="primary"
-                          onClick={() => this.addReview(idx)}
+                          onClick={() =>
+                            this.showFeedbackModal(
+                              idx,
+                              item.feedback,
+                              item.type
+                            )
+                          }
                         >
                           feedback
                         </Button>
@@ -200,6 +274,17 @@ export class FavoriteList extends Component {
             </CardDeck>
           </div>
         )}
+
+        <Feedback
+          feedbackModal={this.state.feedbackModal}
+          hideFeedbackModal={this.hideFeedbackModal}
+          feedback={this.state.feedback}
+          type={this.state.type}
+          index={this.state.index}
+          changeFeedback={this.changeFeedback}
+          updateFeedback={this.updateFeedback}
+          deleteFeedback={this.deleteFeedback}
+        />
       </div>
     );
   }
