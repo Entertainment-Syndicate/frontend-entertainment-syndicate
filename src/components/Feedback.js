@@ -10,7 +10,7 @@ export class Feedback extends Component {
           onHide={this.props.hideFeedbackModal}
         >
           <Modal.Header closeButton>
-            <Modal.Title>Feedback</Modal.Title>
+            <Modal.Title>Review</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form>
@@ -23,10 +23,10 @@ export class Feedback extends Component {
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.props.updateFeedback} variant="primary">
-              Update Feedback
+              Update Review
             </Button>
             <Button onClick={this.props.deleteFeedback} variant="danger">
-              Delete Feedback
+              Delete Review
             </Button>
           </Modal.Footer>
         </Modal>

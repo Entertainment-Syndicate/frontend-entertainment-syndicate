@@ -1,18 +1,54 @@
+* {
+  box-sizing: border-box;
+}
 a {
-  /* color:#fff; */
-  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: larger;
 }
 
-a:hover {
+.Navbar {
+  background-color: rgba(190, 68, 68, 0) !important;
+  position: absolute;
+  top: 30px;
+  z-index: 4;
+  left: 10%;
+  display: inline;
+}
+
+.navs:hover {
   color: darkgrey;
   text-decoration: none;
+  background-color: rgba(255, 0, 0, 0.801);
+  transition: 1000ms;
+  border-radius: 15px;
 }
 
 .navs {
-  padding-left: 90px;
-  color: #fff;
+  margin-left: 45px;
+  margin-right: 45px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
+/* .Button:hover {
+  text-decoration: none;
+  background-color: red;
+  transition: 1000ms;
+  border-radius: 15px;
+} */
 
-#button {
-  padding-left: 30px;
+.button {
+  background-color: rgba(255, 0, 0, 0.815) !important ;
+  border-radius: 15px !important;
+  border: none;
+  margin-left: 35px;
+  margin-right: 35px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+}
+.name {
+  font-size: 27px;
+  margin-right: 50px;
 }

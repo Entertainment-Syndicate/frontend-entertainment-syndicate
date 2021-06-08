@@ -25,7 +25,7 @@ export class Home extends Component {
               style={{
                 width: '100%',
                 height: '100vh',
-                marginTop: '-55.6px',
+                // marginTop: '-55.6px',
                 objectFit: 'cover',
               }}
               src={Movie}
@@ -47,13 +47,6 @@ export class Home extends Component {
               <br />
               <br />
               <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -62,7 +55,7 @@ export class Home extends Component {
               style={{
                 width: '100%',
                 height: '100vh',
-                marginTop: '-55.6px',
+                // marginTop: '-55.6px',
                 objectFit: 'cover',
               }}
               src={Anime}
@@ -85,13 +78,6 @@ export class Home extends Component {
               <br />
               <br />
               <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -100,7 +86,7 @@ export class Home extends Component {
               style={{
                 width: '100%',
                 height: '100vh',
-                marginTop: '-55.6px',
+                // marginTop: '-55.6px',
                 objectFit: 'cover',
               }}
               src={Game}
@@ -110,13 +96,6 @@ export class Home extends Component {
             <Carousel.Caption>
               <h1>Game Collections</h1>
               <h3>Live your imagination in reality!</h3>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
               <br />
               <br />
               <br />
