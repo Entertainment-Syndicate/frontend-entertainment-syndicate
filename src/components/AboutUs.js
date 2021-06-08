@@ -14,9 +14,16 @@ export class AboutUs extends Component {
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </Card.Text>
-              <Button variant="primary">Delete</Button>
 
-              <Button variant="primary">Feedback</Button>
+              <a className="fa fa-github" href="https://www.w3schools.com">
+                z
+              </a>
+              <a
+                className="fa fa-linkedin-square"
+                href="https://www.w3schools.com"
+              >
+                z
+              </a>
             </Card.Body>
           </Card>
         </CardGroup>
