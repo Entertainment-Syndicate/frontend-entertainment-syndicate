@@ -11,11 +11,14 @@ import LogoutButton from './components/LogOutButton';
 import Explore from './components/Explore';
 import AboutUs from './components/AboutUs';
 import Home from './components/Home';
+import { withRouter } from 'react-router';
 import './app.css';
 
 class App extends React.Component {
   render() {
     console.log('app', this.props);
+    const { router, params, location, routes } = this.props;
+    console.log(location);
     const { isAuthenticated } = this.props.auth0;
     return (
       <div>
@@ -58,4 +61,4 @@ class App extends React.Component {
   }
 }
 
-export default withAuth0(App);
+export default withRouter(withAuth0(App));

@@ -131,91 +131,6 @@ export class FavoriteList extends Component {
   render() {
     return (
       <div>
-        {this.state.favoriteAnime.length !== 0 && (
-          <div>
-            <h2>Anime</h2>
-            <CardDeck>
-              {this.state.favoriteAnime.map((item, idx) => {
-                return (
-                  <CardGroup key={idx} style={{ width: '22rem' }}>
-                    {/* <div className="container">
-                      <div className="row">
-                        <div className="col-sm-3">
-                          <div className="flip"> */}
-                    <Card className="card-card">
-                      <div class="flip-card">
-                        <div class="flip-card-inner">
-                          <div class="flip-card-front">
-                            <Card.Img variant="top" src={item.image} />
-                            <Card.Body>
-                              <Card.Title> {item.title}</Card.Title>
-                            </Card.Body>
-                          </div>
-
-                          {/* back */}
-                          <div class="flip-card-back">
-                            <Accordion defaultActiveKey="0">
-                              <Card>
-                                <Accordion.Toggle as={Card.Header} eventKey="0">
-                                  About the Anime
-                                </Accordion.Toggle>
-                                <Accordion.Collapse eventKey="0">
-                                  <Card.Body>
-                                    <p>Description: {item.description}</p>
-                                    <p>Date: {item.date}</p>
-                                    <p>Type: {item.type}</p>
-                                    <p>Category: {item.category}</p>
-                                    <p>Episodes: {item.episodes}</p>
-                                    <p>Score: {item.score}</p>
-                                    <p>Rating: {item.rate}</p>
-                                    <a href={item.watchURL}>Watch Here</a>
-                                  </Card.Body>
-                                </Accordion.Collapse>
-                              </Card>
-                              <Card>
-                                <Accordion.Toggle as={Card.Header} eventKey="1">
-                                  Your Review
-                                </Accordion.Toggle>
-                                <Accordion.Collapse eventKey="1">
-                                  <Card.Body>
-                                    <Card.Text>{item.feedback}</Card.Text>
-                                  </Card.Body>
-                                </Accordion.Collapse>
-                              </Card>
-                            </Accordion>
-                            <Card.Body>
-                              {/* 7  , 4th req */}
-                              <Button
-                                variant="danger"
-                                onClick={() => this.delete(idx, item.type)}
-                              >
-                                Remove Anime
-                              </Button>
-                              {/* add input field  on submiit and a place to put it and the  && */}
-                              <Button
-                                variant="primary"
-                                onClick={() =>
-                                  this.showFeedbackModal(
-                                    idx,
-                                    item.feedback,
-                                    item.type
-                                  )
-                                }
-                              >
-                                Review
-                              </Button>
-                            </Card.Body>
-                          </div>
-                        </div>
-                      </div>
-                    </Card>
-                  </CardGroup>
-                );
-              })}
-            </CardDeck>
-          </div>
-        )}
-
         {this.state.favoriteMovie.length !== 0 && (
           <div>
             <h2>Movies</h2>
@@ -281,6 +196,91 @@ export class FavoriteList extends Component {
                                 onClick={() => this.delete(idx, item.type)}
                               >
                                 Remove Movie
+                              </Button>
+                              {/* add input field  on submiit and a place to put it and the  && */}
+                              <Button
+                                variant="primary"
+                                onClick={() =>
+                                  this.showFeedbackModal(
+                                    idx,
+                                    item.feedback,
+                                    item.type
+                                  )
+                                }
+                              >
+                                Review
+                              </Button>
+                            </Card.Body>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </CardGroup>
+                );
+              })}
+            </CardDeck>
+          </div>
+        )}
+
+        {this.state.favoriteAnime.length !== 0 && (
+          <div>
+            <h2>Anime</h2>
+            <CardDeck>
+              {this.state.favoriteAnime.map((item, idx) => {
+                return (
+                  <CardGroup key={idx} style={{ width: '22rem' }}>
+                    {/* <div className="container">
+                      <div className="row">
+                        <div className="col-sm-3">
+                          <div className="flip"> */}
+                    <Card className="card-card">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <Card.Img variant="top" src={item.image} />
+                            <Card.Body>
+                              <Card.Title> {item.title}</Card.Title>
+                            </Card.Body>
+                          </div>
+
+                          {/* back */}
+                          <div class="flip-card-back">
+                            <Accordion defaultActiveKey="0">
+                              <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="0">
+                                  About the Anime
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                  <Card.Body>
+                                    <p>Description: {item.description}</p>
+                                    <p>Date: {item.date}</p>
+                                    <p>Type: {item.type}</p>
+                                    <p>Category: {item.category}</p>
+                                    <p>Episodes: {item.episodes}</p>
+                                    <p>Score: {item.score}</p>
+                                    <p>Rating: {item.rate}</p>
+                                    <a href={item.watchURL}>Watch Here</a>
+                                  </Card.Body>
+                                </Accordion.Collapse>
+                              </Card>
+                              <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="1">
+                                  Your Review
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey="1">
+                                  <Card.Body>
+                                    <Card.Text>{item.feedback}</Card.Text>
+                                  </Card.Body>
+                                </Accordion.Collapse>
+                              </Card>
+                            </Accordion>
+                            <Card.Body>
+                              {/* 7  , 4th req */}
+                              <Button
+                                variant="danger"
+                                onClick={() => this.delete(idx, item.type)}
+                              >
+                                Remove Anime
                               </Button>
                               {/* add input field  on submiit and a place to put it and the  && */}
                               <Button
