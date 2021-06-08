@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import FavoriteList from './FavoriteList';
-// import './CSS-File/user.css'
+import '../CSS/FavoriteList.css';
 
 const User = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -17,10 +17,14 @@ const User = () => {
   return (
     isAuthenticated && (
       <div>
-        <img src={user.picture} alt={user.name} />
-        <h2> Name: {user.name}</h2>
-        <p> Email: {user.email}</p>
-        <FavoriteList />
+        <div className="userHeader">
+          <img id="profilePicture" src={user.picture} alt={user.name} />
+          <h2> Name: {user.name}</h2>
+          <p> Email: {user.email}</p>
+        </div>
+        <div className="FavCards">
+          <FavoriteList />
+        </div>
       </div>
     )
   );
