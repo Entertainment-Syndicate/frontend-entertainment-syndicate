@@ -1,7 +1,7 @@
 .logo-icon {
   position: relative;
   right: -45%;
-  bottom: 12px;
+  bottom: 7px;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -20,12 +20,24 @@
 hr {
   margin-left: 20%;
   margin-right: 20%;
+  color: rgb(138, 1, 1);
 }
 
 .footer2 {
-  margin-left: 32%;
+  margin-left: 27%;
+  color: white;
+  font-size: 20px;
+}
+.footer2:hover {
+  color: red;
+}
+.footer3 {
+  margin-top: 10px;
+  margin-left: 42%;
+  color: white;
+  font-size: 20px;
 }
 
-.footer3 {
-  margin-left: 43%;
+.footerElement {
+  background-color: rgba(24, 32, 49, 0.699);
 }
