@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+.userlogin {
+  background-color: rgba(255, 0, 0, 0.815) !important ;
+  border-radius: 15px !important;
+  border: none;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  margin-left: 47%;
+}
+
+.userh3 {
+  /* margin-left: -20px; */
+  color: white;
+}
+.userh2 {
+  padding-top: 15px;
+  /* margin-top: 300px !important; */
+}
+.userborder {
+  margin-top: 350px !important;
+  margin-bottom: 250px !important;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 15px;
+  border: 2px white solid;
+}
+.userHeader {
+  margin-top: 130px;
+}
