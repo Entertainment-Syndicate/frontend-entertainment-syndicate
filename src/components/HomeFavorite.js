@@ -5,7 +5,8 @@ import { Card, CardGroup } from 'react-bootstrap';
 import 'react-multi-carousel/lib/styles.css';
 import Carousel from 'react-multi-carousel';
 import { Link } from 'react-router-dom';
-import './WatchList.css';
+import './Home.css';
+
 export class HomeFavorite extends Component {
   constructor(props) {
     super(props);

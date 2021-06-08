@@ -14,6 +14,7 @@ import Game from './Game';
 import Movie from './Movie';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
+import './Explore.css';
 
 export class Explore extends Component {
   constructor(props) {
@@ -175,59 +176,61 @@ export class Explore extends Component {
   render() {
     return (
       <div>
-        <Navbar bg="light" expand="lg">
+        {/* <Navbar bg="light" expand="lg">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              {/* Radio for Type filtering */}
-              <ButtonGroup>
-                {this.state.radios.map((radio, idx) => (
-                  <Button
-                    key={idx}
-                    id={`radio-${idx}`}
-                    type="radio"
-                    // variant={'outline-success'}
-                    name="radio"
-                    value={radio.value}
-                    // Functions from Radio Component by Default
-                    checked={this.state.radioValue === radio.value}
-                    onChange={(e) =>
-                      this.setState({
-                        radioValue: e.currentTarget.value,
-                      })
-                    }
-                    // 2-
-                    onClick={this.selectType}
-                  >
-                    {radio.name}
-                  </Button>
-                ))}
-              </ButtonGroup>
+            <Nav className="mr-auto"> */}
+        {/* Radio for Type filtering */}
 
-              {/* Form for Category Filtering */}
-              <Form>
-                <Form.Group controlId="formBasicEmail">
-                  <Form.Control
-                    as="select"
-                    custom
-                    name="select"
-                    // 4-
-                    onChange={this.selectCategory}
-                  >
-                    <option value="" disabled defaultValue>
-                      Select your category
-                    </option>
-                    <option value="All">All</option>
-                    <option value="Action">Action</option>
-                    <option value="Fantasy">Fantasy</option>
-                    <option value="Horror">Horror</option>
-                    <option value="Sci-Fi">Sci-Fi</option>
-                  </Form.Control>
-                </Form.Group>
-              </Form>
-            </Nav>
+        <ButtonGroup>
+          {this.state.radios.map((radio, idx) => (
+            <Button
+              className="button-button"
+              key={idx}
+              id={`radio-${idx}`}
+              type="radio"
+              // variant={'outline-success'}
+              name="radio"
+              value={radio.value}
+              // Functions from Radio Component by Default
+              checked={this.state.radioValue === radio.value}
+              onChange={(e) =>
+                this.setState({
+                  radioValue: e.currentTarget.value,
+                })
+              }
+              // 2-
+              onClick={this.selectType}
+            >
+              {radio.name}
+            </Button>
+          ))}
+        </ButtonGroup>
+
+        {/* Form for Category Filtering */}
+        <Form>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Control
+              as="select"
+              custom
+              name="select"
+              // 4-
+              onChange={this.selectCategory}
+            >
+              <option value="" disabled defaultValue>
+                Select your category
+              </option>
+              <option value="All">All</option>
+              <option value="Action">Action</option>
+              <option value="Fantasy">Fantasy</option>
+              <option value="Horror">Horror</option>
+              <option value="Sci-Fi">Sci-Fi</option>
+            </Form.Control>
+          </Form.Group>
+        </Form>
+        {/* </Nav>
           </Navbar.Collapse>
-        </Navbar>
+        </Navbar> */}
         {/* show data  or loading spiner  */}
         {this.state.showData ? (
           <div>
@@ -235,7 +238,7 @@ export class Explore extends Component {
               {/* show each type data if exist */}
 
               {this.state.showAnime && (
-                <div>
+                <div className="card-div">
                   <h2>Anime</h2>
                   <Anime
                     animeData={this.state.animeData}
@@ -252,7 +255,7 @@ export class Explore extends Component {
               {/* show each type data if exist */}
 
               {this.state.showMovie && (
-                <div>
+                <div className="card-div">
                   <h2>Movies</h2>
                   <Movie
                     movieData={this.state.movieData}
@@ -269,7 +272,7 @@ export class Explore extends Component {
               {/* show each type data if exist */}
 
               {this.state.showGame && (
-                <div>
+                <div className="card-div">
                   <h2>Games</h2>
                   <Game
                     gameData={this.state.gameData}
