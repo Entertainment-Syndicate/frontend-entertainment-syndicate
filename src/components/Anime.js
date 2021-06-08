@@ -6,6 +6,9 @@ import {
   CardColumns,
   Modal,
   CardDeck,
+  Container,
+  Row,
+  Col,
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'semantic-ui-css/semantic.min.css';
@@ -90,7 +93,6 @@ export class Anime extends Component {
             transitionDuration={300}
           >
             {this.props.animeData.map((item2) => {
-              // console.log('hello Anime');
               return item2.map((item, idx) => {
                 return (
                   <CardGroup className="card-group" key={idx}>
@@ -110,15 +112,26 @@ export class Anime extends Component {
             })}
           </Carousel>
         ) : (
-          <div>
-            <CardDeck>
+          <Container
+          // style={{ padding: '0' }}
+          >
+            <Row
+              className=" justify-content-center"
+              // style={{ marginRight: '0', marginLeft: '60px' }}
+            >
               {this.props.animeData.map((item2) => {
-                // console.log('hello Anime');
                 return item2.map((item, idx) => {
                   return (
-                    <CardGroup className="card-group" key={idx}>
+                    <Col
+                      key={idx}
+                      sm={6}
+                      lg={3}
+                      // style={{ paddingRight: '0', paddingLeft: '0' }}
+                    >
                       <Card
                         className="card-card"
+                        // style={{ margin: '30px 20px 30px 20px' }}
+                        style={{ margin: '30px' }}
                         onClick={() => this.showModal(item)}
                       >
                         <Card.Img variant="top" src={item.image} />
@@ -127,12 +140,12 @@ export class Anime extends Component {
                           <Card.Title> {item.title}</Card.Title>
                         </Card.Body>
                       </Card>
-                    </CardGroup>
+                    </Col>
                   );
                 });
               })}
-            </CardDeck>
-          </div>
+            </Row>
+          </Container>
         )}
 
         {/* Modal */}
