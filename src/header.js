@@ -6,9 +6,10 @@ import './header.css';
 import { withAuth0 } from '@auth0/auth0-react';
 import LogoutButton from './components/LogOutButton';
 import LoginButton from './components/LoginButton';
-
+import { withRouter } from 'react-router';
 class Header extends React.Component {
   render() {
+    const { router, params, location, routes } = this.props;
     const { isAuthenticated } = this.props.auth0;
     return (
       <Navbar
@@ -24,16 +25,32 @@ class Header extends React.Component {
         >
           Entertainment Syndicate
         </Navbar.Brand>
-        <Link className="navs" to="/">
+        <Link
+          className={location.pathname === '/' ? `active-navbar` : `navs`}
+          to="/"
+        >
           Home
         </Link>
-        <Link className="navs" to="/explore">
+        <Link
+          className={
+            location.pathname === '/explore' ? `active-navbar` : `navs`
+          }
+          to="/explore"
+        >
           Explore
         </Link>
-        <Link className="navs" to="/user">
+        <Link
+          className={location.pathname === '/user' ? `active-navbar` : `navs`}
+          to="/user"
+        >
           Profile
         </Link>
-        <Link className="navs" to="/about-us">
+        <Link
+          className={
+            location.pathname === '/about-us' ? `active-navbar` : `navs`
+          }
+          to="/about-us"
+        >
           About Us
         </Link>
         {/* TODO: if the user is logged in, render the `LogoutButton` - if the user is logged out, render the `LoginButton` */}
@@ -47,4 +64,4 @@ class Header extends React.Component {
   }
 }
 
-export default withAuth0(Header);
+export default withRouter(withAuth0(Header));
