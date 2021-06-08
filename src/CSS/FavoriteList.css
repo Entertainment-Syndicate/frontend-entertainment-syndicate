@@ -1,9 +1,9 @@
 .flip-card {
   background-color: transparent;
-  width: 20rem;
-  height: 300px;
+  /* width: 20rem; */
+  /* height: 300px; */
   perspective: 1000px;
-  height: 700px;
+  /* height: 700px; */
 }
 
 .flip-card-inner {

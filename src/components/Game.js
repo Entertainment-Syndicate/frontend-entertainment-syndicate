@@ -6,6 +6,9 @@ import {
   CardColumns,
   Modal,
   CardDeck,
+  Container,
+  Row,
+  Col,
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'semantic-ui-css/semantic.min.css';
@@ -108,15 +111,15 @@ export class Game extends Component {
             })}
           </Carousel>
         ) : (
-          <div>
-            <CardDeck>
+          <Container>
+            <Row className=" justify-content-center">
               {this.props.gameData.map((item2) => {
-                // console.log('hello Anime');
                 return item2.map((item, idx) => {
                   return (
-                    <CardGroup className="card-group" key={idx}>
+                    <Col key={idx} lg={3}>
                       <Card
                         className="card-card"
+                        style={{ margin: '30px' }}
                         onClick={() => this.showModal(item)}
                       >
                         <Card.Img variant="top" src={item.image} />
@@ -125,12 +128,12 @@ export class Game extends Component {
                           <Card.Title> {item.title}</Card.Title>
                         </Card.Body>
                       </Card>
-                    </CardGroup>
+                    </Col>
                   );
                 });
               })}
-            </CardDeck>
-          </div>
+            </Row>
+          </Container>
         )}
 
         <Modal show={this.state.displayModal} onHide={this.hideModal}>
