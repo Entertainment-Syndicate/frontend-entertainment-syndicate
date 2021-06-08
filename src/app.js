@@ -11,6 +11,7 @@ import LogoutButton from './components/LogOutButton';
 import Explore from './components/Explore';
 import AboutUs from './components/AboutUs';
 import Home from './components/Home';
+import './app.css';
 
 class App extends React.Component {
   render() {
