@@ -22,11 +22,11 @@ export class Feedback extends Component {
             </Form>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.props.updateFeedback} variant="primary">
-              Update Review
-            </Button>
             <Button onClick={this.props.deleteFeedback} variant="danger">
               Delete Review
+            </Button>
+            <Button onClick={this.props.updateFeedback} variant="primary">
+              Update Review
             </Button>
           </Modal.Footer>
         </Modal>
