@@ -30,7 +30,7 @@ export class HomeFavorite extends Component {
         ],
       });
       console.log(this.state.favoriteList);
-    } catch {
+    } catch (error) {
       console.log('the catch');
     }
   };
