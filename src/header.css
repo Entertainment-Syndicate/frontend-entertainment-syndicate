@@ -1,16 +1,18 @@
-a{
-  color:#fff;
+a {
+  /* color:#fff; */
+  text-decoration: none;
 }
 
-a:hover{
-  color:darkgrey;
-  
+a:hover {
+  color: darkgrey;
+  text-decoration: none;
 }
 
-.navs{
-  padding-left: 90px ;
+.navs {
+  padding-left: 90px;
+  color: #fff;
 }
 
-#button{
-  padding-left: 30px ;
+#button {
+  padding-left: 30px;
 }

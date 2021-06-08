@@ -4,7 +4,8 @@ import { withAuth0 } from '@auth0/auth0-react';
 import { Card, CardGroup } from 'react-bootstrap';
 import 'react-multi-carousel/lib/styles.css';
 import Carousel from 'react-multi-carousel';
-
+import { Link } from 'react-router-dom';
+import './WatchList.css';
 export class HomeFavorite extends Component {
   constructor(props) {
     super(props);
@@ -37,7 +38,7 @@ export class HomeFavorite extends Component {
 
   render() {
     return (
-      <div>
+      <div className="card-div">
         {/* {(this.state.favoriteList[0] !== undefined ||
           this.state.favoriteList[1] !== undefined ||
           this.state.favoriteList[2] !== undefined) && ( */}
@@ -45,14 +46,14 @@ export class HomeFavorite extends Component {
           this.state.favoriteList[1].length !== 0 ||
           this.state.favoriteList[2].length !== 0) && (
           <div>
-            <h2>Favourite list</h2>
+            <h2>Grow Your Favorite List</h2>
             <Carousel
               additionalTransfrom={0}
               arrows
               autoPlay
               autoPlaySpeed={3000}
               centerMode={true}
-              className=""
+              className="carousel"
               containerClass="container-with-dots"
               customTransition="all 1s linear"
               dotListClass=""
@@ -100,15 +101,17 @@ export class HomeFavorite extends Component {
                 // console.log('hello Anime');
                 return item2.map((item, idx) => {
                   return (
-                    <CardGroup key={idx} style={{ width: '18rem' }}>
-                      <Card>
-                        <Card.Img variant="top" src={item.image} />
+                    <Link to="/user">
+                      <CardGroup className="card-group" key={idx}>
+                        <Card className="card-carousel">
+                          <Card.Img variant="top" src={item.image} />
 
-                        <Card.Body>
-                          <Card.Title> {item.title}</Card.Title>
-                        </Card.Body>
-                      </Card>
-                    </CardGroup>
+                          <Card.Body>
+                            <Card.Title> {item.title}</Card.Title>
+                          </Card.Body>
+                        </Card>
+                      </CardGroup>
+                    </Link>
                   );
                 });
               })}
