@@ -5,6 +5,7 @@ import { withAuth0 } from '@auth0/auth0-react';
 import Login from '../login';
 import Movie from '../image/MovieCover.jpg';
 import Game from '../image/GameCover.jpg';
+import Anime from '../image/AnimeCover.jpg';
 import { Image, Carousel } from 'react-bootstrap';
 
 export class Home extends Component {
@@ -24,15 +25,28 @@ export class Home extends Component {
               style={{
                 width: '100%',
                 height: '100vh',
-                marginTop: '-55.6px',
+                // marginTop: '-55.6px',
                 objectFit: 'cover',
               }}
               src={Movie}
               alt="https://via.placeholder.com/1920x1080"
             />
             <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h1>Movie Collections</h1>
+              <h3>Explore the best movies from around the world!</h3>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -41,16 +55,29 @@ export class Home extends Component {
               style={{
                 width: '100%',
                 height: '100vh',
-                marginTop: '-55.6px',
+                // marginTop: '-55.6px',
                 objectFit: 'cover',
               }}
-              src="http://cdn.wallpaperhi.com/1680x1050/20120307/death%20note%20l%201680x1050%20wallpaper_www.wallpaperhi.com_34.jpg"
+              src={Anime}
               alt="https://via.placeholder.com/1920x1080"
             />
 
             <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h1>Anime Collections</h1>
+              <h3>Best animes of all categories for all ages!</h3>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -59,7 +86,7 @@ export class Home extends Component {
               style={{
                 width: '100%',
                 height: '100vh',
-                marginTop: '-55.6px',
+                // marginTop: '-55.6px',
                 objectFit: 'cover',
               }}
               src={Game}
@@ -67,10 +94,21 @@ export class Home extends Component {
             />
 
             <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
+              <h1>Game Collections</h1>
+              <h3>Live your imagination in reality!</h3>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
