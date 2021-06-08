@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
+import './WatchList.css';
 import { Card, CardGroup } from 'react-bootstrap';
 
 class WatchList extends Component {
@@ -59,10 +60,10 @@ class WatchList extends Component {
     return (
       <div>
         {/* {this.state.randomMovie2 && this.state.randomMovie2.length && ( */}
-        <div>
-          <h2>Watch This</h2>
-          <CardGroup style={{ width: '80rem' }}>
-            <Card>
+        <div className="card-div">
+          <h2>Explore Our Collections</h2>
+          <CardGroup className="card-group">
+            <Card className="card-home">
               <Card.Img variant="top" src={this.state.randomAnime1.image_url} />
 
               <Card.Body>
@@ -70,7 +71,7 @@ class WatchList extends Component {
               </Card.Body>
             </Card>
 
-            <Card>
+            <Card className="card-home">
               <Card.Img variant="top" src={this.state.randomAnime2.image_url} />
 
               <Card.Body>
@@ -78,7 +79,7 @@ class WatchList extends Component {
               </Card.Body>
             </Card>
 
-            <Card>
+            <Card className="card-home">
               <Card.Img
                 variant="top"
                 src={`https://image.tmdb.org/t/p/w500${this.state.randomMovie1.poster_path}`}
@@ -89,7 +90,7 @@ class WatchList extends Component {
               </Card.Body>
             </Card>
 
-            <Card>
+            <Card className="card-home">
               <Card.Img
                 variant="top"
                 src={`https://image.tmdb.org/t/p/w500${this.state.randomMovie2.poster_path}`}
