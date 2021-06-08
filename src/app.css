@@ -1,10 +1,19 @@
-.card-card {
+a {
+  text-decoration: none !important;
+}
+
+.card-card,
+.flip-card {
   height: 600px;
-  margin: 0 60px;
   width: 18rem;
   box-shadow: rgba(210, 30, 30, 0.15) 0px 20px 25px -5px,
     rgba(210, 30, 30, 0.04) 0px 10px 10px -5px;
 }
+
+.card-card {
+  margin: 0 60px;
+}
+
 .card-card img {
   height: 500px;
   object-fit: cover;
@@ -14,7 +23,7 @@
 }
 .card-div h2,
 .card-div h1 {
-  margin: 30px 60px;
+  margin: 20px 60px 40px 60px;
   text-align: center;
 }
 .card-carousel {
@@ -28,10 +37,10 @@
   height: 500px;
   object-fit: cover;
 }
-.card-group {
+/* .card-group {
   display: flex;
   justify-content: space-evenly;
-}
+} */
 
 .button-button {
   color: black;
@@ -43,5 +52,13 @@ body {
 
 p {
   margin: 0;
-  padding: 2px;
+  padding: 0px;
+}
+
+hr {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 40px;
+  color: white;
+  background-color: white;
 }

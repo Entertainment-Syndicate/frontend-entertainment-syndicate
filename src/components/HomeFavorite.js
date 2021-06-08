@@ -47,7 +47,8 @@ export class HomeFavorite extends Component {
           this.state.favoriteList[1].length !== 0 ||
           this.state.favoriteList[2].length !== 0) && (
           <div>
-            <h2>Grow Your Favorite List</h2>
+            <hr />
+            <h2>Grow Your Favorite List!</h2>
             <Carousel
               additionalTransfrom={0}
               arrows
