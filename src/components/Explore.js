@@ -237,11 +237,11 @@ export class Explore extends Component {
             <div>
               {/* show each type data if exist */}
 
-              {this.state.showAnime && (
+              {this.state.showMovie && (
                 <div className="card-div">
-                  <h2>Anime</h2>
-                  <Anime
-                    animeData={this.state.animeData}
+                  <h2>Movies</h2>
+                  <Movie
+                    movieData={this.state.movieData}
                     showAnime={this.state.showAnime}
                     showMovie={this.state.showMovie}
                     showGame={this.state.showGame}
@@ -254,11 +254,11 @@ export class Explore extends Component {
             <div>
               {/* show each type data if exist */}
 
-              {this.state.showMovie && (
+              {this.state.showAnime && (
                 <div className="card-div">
-                  <h2>Movies</h2>
-                  <Movie
-                    movieData={this.state.movieData}
+                  <h2>Anime</h2>
+                  <Anime
+                    animeData={this.state.animeData}
                     showAnime={this.state.showAnime}
                     showMovie={this.state.showMovie}
                     showGame={this.state.showGame}

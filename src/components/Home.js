@@ -4,7 +4,7 @@ import HomeFavorite from './HomeFavorite';
 import { withAuth0 } from '@auth0/auth0-react';
 import Login from '../login';
 import Movie from '../image/MovieCover.jpg';
-import Game from '../image/GameCover.jpg';
+import Game from '../image/GameCover2.jpg';
 import Anime from '../image/AnimeCover.jpg';
 import { Image, Carousel } from 'react-bootstrap';
 
