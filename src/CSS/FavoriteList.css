@@ -1,8 +1,9 @@
 .flip-card {
   background-color: transparent;
-  width: 300px;
+  width: 20rem;
   height: 300px;
   perspective: 1000px;
+  height: 700px;
 }
 
 .flip-card-inner {
@@ -29,12 +30,27 @@
 }
 
 .flip-card-front {
-  background-color: #bbb;
+  background-color: rgba(250, 250, 250, 0.808);
   color: black;
 }
 
 .flip-card-back {
   background-color: #2980b9;
-  color: white;
+  color: black;
   transform: rotateY(180deg);
+}
+
+.userHeader {
+  margin-top: 100px;
+  /* float: right; */
+}
+.FavCards {
+  margin-top: 100px;
+}
+
+#profilePicture {
+  border-radius: 50px;
+  float: left;
+  margin-right: 30px;
+  margin-left: 10px;
 }

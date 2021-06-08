@@ -32,3 +32,7 @@
 .button-button {
   color: black;
 }
+
+body {
+  background-color: rgb(0, 0, 30);
+}
