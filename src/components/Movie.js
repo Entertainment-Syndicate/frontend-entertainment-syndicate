@@ -91,8 +91,11 @@ export class Movie extends Component {
               // console.log('hello Anime');
               return item2.map((item, idx) => {
                 return (
-                  <CardGroup key={idx} style={{ width: '18rem' }}>
-                    <Card onClick={() => this.showModal(item)}>
+                  <CardGroup className="card-group" key={idx}>
+                    <Card
+                      className="card-carousel"
+                      onClick={() => this.showModal(item)}
+                    >
                       <Card.Img variant="top" src={item.image} />
 
                       <Card.Body>
@@ -111,8 +114,11 @@ export class Movie extends Component {
                 // console.log('hello Anime');
                 return item2.map((item, idx) => {
                   return (
-                    <CardGroup key={idx} style={{ width: '18rem' }}>
-                      <Card onClick={() => this.showModal(item)}>
+                    <CardGroup className="card-group" key={idx}>
+                      <Card
+                        className="card-card"
+                        onClick={() => this.showModal(item)}
+                      >
                         <Card.Img variant="top" src={item.image} />
 
                         <Card.Body>

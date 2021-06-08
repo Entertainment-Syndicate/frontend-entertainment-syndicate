@@ -36,7 +36,7 @@ export class Anime extends Component {
 
   render() {
     return (
-      <div>
+      <div className="card-div">
         {/* If All types must be shown  => render by Carousel else render by Cards*/}
         {this.props.showAnime && this.props.showMovie && this.props.showGame ? (
           <Carousel
@@ -93,8 +93,11 @@ export class Anime extends Component {
               // console.log('hello Anime');
               return item2.map((item, idx) => {
                 return (
-                  <CardGroup key={idx} style={{ width: '18rem' }}>
-                    <Card onClick={() => this.showModal(item)}>
+                  <CardGroup className="card-group" key={idx}>
+                    <Card
+                      className="card-carousel"
+                      onClick={() => this.showModal(item)}
+                    >
                       <Card.Img variant="top" src={item.image} />
 
                       <Card.Body>
@@ -113,8 +116,11 @@ export class Anime extends Component {
                 // console.log('hello Anime');
                 return item2.map((item, idx) => {
                   return (
-                    <CardGroup key={idx} style={{ width: '18rem' }}>
-                      <Card onClick={() => this.showModal(item)}>
+                    <CardGroup className="card-group" key={idx}>
+                      <Card
+                        className="card-card"
+                        onClick={() => this.showModal(item)}
+                      >
                         <Card.Img variant="top" src={item.image} />
 
                         <Card.Body>

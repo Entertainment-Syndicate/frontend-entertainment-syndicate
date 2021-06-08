@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
-import './WatchList.css';
+import './Home.css';
 import { Card, CardGroup } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class WatchList extends Component {
   constructor(props) {
@@ -62,45 +63,53 @@ class WatchList extends Component {
         {/* {this.state.randomMovie2 && this.state.randomMovie2.length && ( */}
         <div className="card-div">
           <h2>Explore Our Collections</h2>
-          <CardGroup className="card-group">
-            <Card className="card-home">
-              <Card.Img variant="top" src={this.state.randomAnime1.image_url} />
+          <Link to="/explore">
+            <CardGroup className="card-group">
+              <Card className="card-card">
+                <Card.Img
+                  variant="top"
+                  src={this.state.randomAnime1.image_url}
+                />
 
-              <Card.Body>
-                <Card.Title> {this.state.randomAnime1.title}</Card.Title>
-              </Card.Body>
-            </Card>
+                <Card.Body>
+                  <Card.Title> {this.state.randomAnime1.title}</Card.Title>
+                </Card.Body>
+              </Card>
 
-            <Card className="card-home">
-              <Card.Img variant="top" src={this.state.randomAnime2.image_url} />
+              <Card className="card-card">
+                <Card.Img
+                  variant="top"
+                  src={this.state.randomAnime2.image_url}
+                />
 
-              <Card.Body>
-                <Card.Title> {this.state.randomAnime2.title}</Card.Title>
-              </Card.Body>
-            </Card>
+                <Card.Body>
+                  <Card.Title> {this.state.randomAnime2.title}</Card.Title>
+                </Card.Body>
+              </Card>
 
-            <Card className="card-home">
-              <Card.Img
-                variant="top"
-                src={`https://image.tmdb.org/t/p/w500${this.state.randomMovie1.poster_path}`}
-              />
+              <Card className="card-card">
+                <Card.Img
+                  variant="top"
+                  src={`https://image.tmdb.org/t/p/w500${this.state.randomMovie1.poster_path}`}
+                />
 
-              <Card.Body>
-                <Card.Title> {this.state.randomMovie1.title}</Card.Title>
-              </Card.Body>
-            </Card>
+                <Card.Body>
+                  <Card.Title> {this.state.randomMovie1.title}</Card.Title>
+                </Card.Body>
+              </Card>
 
-            <Card className="card-home">
-              <Card.Img
-                variant="top"
-                src={`https://image.tmdb.org/t/p/w500${this.state.randomMovie2.poster_path}`}
-              />
+              <Card className="card-card">
+                <Card.Img
+                  variant="top"
+                  src={`https://image.tmdb.org/t/p/w500${this.state.randomMovie2.poster_path}`}
+                />
 
-              <Card.Body>
-                <Card.Title> {this.state.randomMovie2.title}</Card.Title>
-              </Card.Body>
-            </Card>
-          </CardGroup>
+                <Card.Body>
+                  <Card.Title> {this.state.randomMovie2.title}</Card.Title>
+                </Card.Body>
+              </Card>
+            </CardGroup>
+          </Link>
         </div>
         {/* )} */}
       </div>

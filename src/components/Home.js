@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import WatchList from './WatchList';
+import WatchList from './HomeWatch';
 import HomeFavorite from './HomeFavorite';
 import { withAuth0 } from '@auth0/auth0-react';
 import Login from '../login';
