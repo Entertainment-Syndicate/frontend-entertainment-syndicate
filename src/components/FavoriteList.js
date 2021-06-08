@@ -3,6 +3,7 @@ import { Card, Button, CardGroup, CardDeck, Accordion } from 'react-bootstrap';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
 import Feedback from './Feedback';
+import '../CSS/FavoriteList.css';
 
 export class FavoriteList extends Component {
   constructor(props) {
@@ -121,6 +122,12 @@ export class FavoriteList extends Component {
     this.updateFeedback();
   };
 
+  // handleFlip = () => {
+  //   '.flip'.hover(function () {
+  //     this.find('.card').toggleClass('flipped');
+  //   });
+  // };
+
   render() {
     return (
       <div>
@@ -131,66 +138,99 @@ export class FavoriteList extends Component {
               {this.state.favoriteAnime.map((item, idx) => {
                 return (
                   <CardGroup key={idx} style={{ width: '22rem' }}>
-                    <Card>
-                      <Card.Img variant="top" src={item.image} />
+                    {/* <div className="container">
+                      <div className="row">
+                        <div className="col-sm-3">
+                          <div className="flip"> */}
+                    <Card className="card">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            {/* front */}
+                            {/* <div className="face front">
+                                <div className="inner"> */}
+                            <Card.Img variant="top" src={item.image} />
+                            <Card.Body>
+                              <Card.Title> {item.title}</Card.Title>
+                            </Card.Body>
+                          </div>
 
-                      <Card.Body>
-                        <Card.Title> {item.title}</Card.Title>
-                      </Card.Body>
-                      <Accordion defaultActiveKey="0">
-                        <Card>
-                          <Accordion.Toggle as={Card.Header} eventKey="0">
-                            about the Anime
-                          </Accordion.Toggle>
-                          <Accordion.Collapse eventKey="0">
+                          {/* </div>
+                              </div> */}
+
+                          {/* back */}
+                          <div class="flip-card-back">
+                            {/* <div className="face back">
+                                <div className="inner text-center"> */}
+                            <Accordion defaultActiveKey="0">
+                              <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="0">
+                                  about the Anime
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                  <Card.Body>
+                                    <Card.Text>
+                                      Description: {item.description}
+                                    </Card.Text>
+                                    <Card.Text>Date: {item.date}</Card.Text>
+                                    <Card.Text>Type: {item.type}</Card.Text>
+                                    <Card.Text>
+                                      Category: {item.category}
+                                    </Card.Text>
+                                    <Card.Text>
+                                      Episodes: {item.episodes}
+                                    </Card.Text>
+                                    <Card.Text>Score: {item.score}</Card.Text>
+                                    <Card.Text>Rating: {item.rate}</Card.Text>
+                                    <a href={item.watchURL}>Watch Here</a>
+                                  </Card.Body>
+                                </Accordion.Collapse>
+                              </Card>
+                              <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="1">
+                                  Your Review
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey="1">
+                                  <Card.Body>
+                                    <Card.Text>{item.feedback}</Card.Text>
+                                  </Card.Body>
+                                </Accordion.Collapse>
+                              </Card>
+                            </Accordion>
                             <Card.Body>
-                              <Card.Text>
-                                Description: {item.description}
-                              </Card.Text>
-                              <Card.Text>Date: {item.date}</Card.Text>
-                              <Card.Text>Type: {item.type}</Card.Text>
-                              <Card.Text>Category: {item.category}</Card.Text>
-                              <Card.Text>Episodes: {item.episodes}</Card.Text>
-                              <Card.Text>Score: {item.score}</Card.Text>
-                              <Card.Text>Rating: {item.rate}</Card.Text>
-                              <a href={item.watchURL}>Watch Here</a>
+                              {/* 7  , 4th req */}
+                              <Button
+                                variant="danger"
+                                onClick={() => this.delete(idx, item.type)}
+                              >
+                                Remove Anime
+                              </Button>
+                              {/* add input field  on submiit and a place to put it and the  && */}
+                              <Button
+                                variant="primary"
+                                onClick={() =>
+                                  this.showFeedbackModal(
+                                    idx,
+                                    item.feedback,
+                                    item.type
+                                  )
+                                }
+                              >
+                                Review
+                              </Button>
                             </Card.Body>
-                          </Accordion.Collapse>
-                        </Card>
-                        <Card>
-                          <Accordion.Toggle as={Card.Header} eventKey="1">
-                            Your Review
-                          </Accordion.Toggle>
-                          <Accordion.Collapse eventKey="1">
-                            <Card.Body>
-                              <Card.Text>{item.feedback}</Card.Text>
-                            </Card.Body>
-                          </Accordion.Collapse>
-                        </Card>
-                      </Accordion>
-                      <Card.Body>
-                        {/* 7  , 4th req */}
-                        <Button
-                          variant="danger"
-                          onClick={() => this.delete(idx, item.type)}
-                        >
-                          Remove Anime
-                        </Button>
-                        {/* add input field  on submiit and a place to put it and the  && */}
-                        <Button
-                          variant="primary"
-                          onClick={() =>
-                            this.showFeedbackModal(
-                              idx,
-                              item.feedback,
-                              item.type
-                            )
-                          }
-                        >
-                          Review
-                        </Button>
-                      </Card.Body>
+                          </div>
+
+                          {/* </div>
+                              </div> */}
+                        </div>
+                      </div>
                     </Card>
+
+                    {/* </div>
+                        </div>
+                      </div>
+                    </div> */}
                   </CardGroup>
                 );
               })}
