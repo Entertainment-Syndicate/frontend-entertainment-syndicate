@@ -150,7 +150,10 @@ export class FavoriteList extends Component {
                   return (
                     // <CardGroup key={idx} style={{ width: '22rem' }}>
                     <Col key={idx} lg={3}>
-                      <Card className="card-card" style={{ margin: '30px' }}>
+                      <Card
+                        className="card-card"
+                        style={{ margin: '30px !important' }}
+                      >
                         <div class="flip-card">
                           <div class="flip-card-inner">
                             <div class="flip-card-front">

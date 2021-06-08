@@ -176,7 +176,6 @@ export class Explore extends Component {
   render() {
     return (
       <div>
-        <hr></hr>
         <ButtonGroup className="Exploreform">
           {this.state.radios.map((radio, idx) => (
             <Button
