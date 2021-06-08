@@ -1,0 +1,32 @@
+/* .buttons {
+  padding-left: 30px;
+} */
+@media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 100%;
+  }
+}
+.Exploreform {
+  margin-top: 130px;
+  /* float: left; */
+  position: relative;
+  left: 100px;
+}
+.drop {
+  width: 150px !important;
+  /* display: inline; */
+  position: relative;
+  left: 500px;
+  bottom: 38px;
+}
+.button-button {
+  margin-left: 20px !important;
+  width: 70px;
+  border-radius: 15px !important;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}

@@ -14,7 +14,7 @@ import Game from './Game';
 import Movie from './Movie';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
-import './Explore.css';
+import './explore.css';
 
 export class Explore extends Component {
   constructor(props) {
@@ -176,13 +176,7 @@ export class Explore extends Component {
   render() {
     return (
       <div>
-        {/* <Navbar bg="light" expand="lg">
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto"> */}
-        {/* Radio for Type filtering */}
-
-        <ButtonGroup>
+        <ButtonGroup className="Exploreform">
           {this.state.radios.map((radio, idx) => (
             <Button
               className="button-button"
@@ -208,12 +202,13 @@ export class Explore extends Component {
         </ButtonGroup>
 
         {/* Form for Category Filtering */}
-        <Form>
+        <Form className="Exploreform2">
           <Form.Group controlId="formBasicEmail">
             <Form.Control
               as="select"
               custom
               name="select"
+              className="drop"
               // 4-
               onChange={this.selectCategory}
             >
@@ -228,9 +223,7 @@ export class Explore extends Component {
             </Form.Control>
           </Form.Group>
         </Form>
-        {/* </Nav>
-          </Navbar.Collapse>
-        </Navbar> */}
+
         {/* show data  or loading spiner  */}
         {this.state.showData ? (
           <div>

@@ -3,26 +3,26 @@ import { Card, CardColumns, CardGroup } from 'react-bootstrap';
 import github from './imgabout/github.png';
 import linkedin from './imgabout/in.png';
 import mail from './imgabout/mail.png';
-
 import heba11 from './imgabout/heba.jpg';
 import dana11 from './imgabout/dana.jpg';
 import yahia from './imgabout/yahia.jpg';
 import mahmoud from './imgabout/mahmoud.jpg';
 import abd from './imgabout/abd.jpeg';
-
-import '../CSS/about-us.css';
+import './about-us.css';
 
 export class AboutUs extends Component {
   render() {
     return (
       <div className="bodyDiv">
-        <CardColumns>
+        <h3>Our team</h3>
+        <CardColumns className="columns">
           <Card style={{ width: '18rem' }} className="cardAboutus">
             <Card.Img src={heba11} alt="" className="cardimg" />
             <Card.Body>
               <Card.Title>HIBA SALEM</Card.Title>
               <Card.Text>
-                Architect and I am really excited to be a software developer
+                I am an architect and I am really excited to be a software
+                developer
               </Card.Text>
 
               <a href="https://github.com/hibasalem">
