@@ -26,6 +26,8 @@ export class FavoriteList extends Component {
 
       index: '',
       type: '',
+      image: '',
+      title: '',
       feedback: '',
       feedbackModal: false,
     };
@@ -72,12 +74,14 @@ export class FavoriteList extends Component {
     });
   };
 
-  showFeedbackModal = (idx, feedback, type) => {
+  showFeedbackModal = (idx, feedback, type, image, title) => {
     this.setState({
       feedbackModal: true,
       feedback: feedback,
       type: type,
       index: idx,
+      image: image,
+      title: title,
     });
   };
 
@@ -101,6 +105,8 @@ export class FavoriteList extends Component {
     // console.log('Inside update');
     let type = this.state.type;
     let index = this.state.index;
+    let image = this.state.image;
+    let title = this.state.title;
     let { user } = this.props.auth0;
     let feedback = this.state.feedback;
     console.log(feedback);
@@ -109,7 +115,11 @@ export class FavoriteList extends Component {
       `${process.env.REACT_APP_SERVER}/feedback/${index}`,
       {
         email: user.email,
+        name: user.name,
+        userImage: user.picture,
+        image: image,
         type: type,
+        title: title,
         feedback: feedback,
       }
     );
@@ -236,7 +246,9 @@ export class FavoriteList extends Component {
                                     this.showFeedbackModal(
                                       idx,
                                       item.feedback,
-                                      item.type
+                                      item.type,
+                                      item.image,
+                                      item.title
                                     )
                                   }
                                 >
@@ -349,7 +361,9 @@ export class FavoriteList extends Component {
                                     this.showFeedbackModal(
                                       idx,
                                       item.feedback,
-                                      item.type
+                                      item.type,
+                                      item.image,
+                                      item.title
                                     )
                                   }
                                 >
@@ -461,7 +475,9 @@ export class FavoriteList extends Component {
                                     this.showFeedbackModal(
                                       idx,
                                       item.feedback,
-                                      item.type
+                                      item.type,
+                                      item.image,
+                                      item.title
                                     )
                                   }
                                 >
