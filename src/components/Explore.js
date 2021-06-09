@@ -47,7 +47,9 @@ export class Explore extends Component {
   // 1-Sending a request to the back-end for rendering the data
   // first request
   componentDidMount = () => {
-    axios.get(`http://localhost:3001/fetchAllData`).then((res) => {
+    console.log(process.env.REACT_APP_SERVER);
+
+    axios.get(`${process.env.REACT_APP_SERVER}/fetchAllData`).then((res) => {
       this.setState({
         allData: res.data,
         showData: true,
@@ -162,12 +164,15 @@ export class Explore extends Component {
   // 5- Function Passed for adding to favorite inside Modal
   //  Second request
   addToFavoriteHandler = async (item) => {
-    let responseFavorite = await axios.post('http://localhost:3001/favorite', {
-      favouriteData: {
-        favoriteItem: item,
-        email: this.props.auth0.user.email,
-      },
-    });
+    let responseFavorite = await axios.post(
+      `${process.env.REACT_APP_SERVER}/favorite`,
+      {
+        favouriteData: {
+          favoriteItem: item,
+          email: this.props.auth0.user.email,
+        },
+      }
+    );
     this.setState({
       favoriteList: responseFavorite.data,
     });
