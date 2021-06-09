@@ -63,7 +63,9 @@ class WatchList extends Component {
         {/* {this.state.randomMovie2 && this.state.randomMovie2.length && ( */}
         <div className="card-div">
           <hr />
-          <h2>Explore Our Collections!</h2>
+          <h2 className="h2class">Explore Our Collections!</h2>
+          <hr />
+
           <Link to="/explore">
             <CardGroup className="card-group">
               <Card className="card-card">

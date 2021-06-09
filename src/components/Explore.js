@@ -232,7 +232,11 @@ export class Explore extends Component {
 
               {this.state.showMovie && (
                 <div className="card-div">
-                  <h2>Movies</h2>
+                  <hr />
+
+                  <h2 className="h2class">Movies</h2>
+                  <hr />
+
                   <Movie
                     movieData={this.state.movieData}
                     showAnime={this.state.showAnime}
@@ -249,7 +253,11 @@ export class Explore extends Component {
 
               {this.state.showAnime && (
                 <div className="card-div">
-                  <h2>Anime</h2>
+                  <hr />
+
+                  <h2 className="h2class">Anime</h2>
+                  <hr />
+
                   <Anime
                     animeData={this.state.animeData}
                     showAnime={this.state.showAnime}
@@ -266,7 +274,10 @@ export class Explore extends Component {
 
               {this.state.showGame && (
                 <div className="card-div">
-                  <h2>Games</h2>
+                  <hr />
+                  <h2 className="h2class">Games</h2>
+                  <hr />
+
                   <Game
                     gameData={this.state.gameData}
                     showAnime={this.state.showAnime}

@@ -142,7 +142,10 @@ export class FavoriteList extends Component {
       <div>
         {this.state.favoriteMovie.length !== 0 && (
           <div className="card-div">
-            <h2>Favorite Movies</h2>
+            <hr />
+            <h2 className="h2class">Favorite Movies</h2>
+            <hr />
+
             {/* <CardDeck> */}
             <Container>
               <Row className=" justify-content-center">
@@ -247,7 +250,11 @@ export class FavoriteList extends Component {
 
         {this.state.favoriteAnime.length !== 0 && (
           <div className="card-div">
-            <h2>Favorite Anime</h2>
+            <hr />
+
+            <h2 className="h2class">Favorite Anime</h2>
+            <hr />
+
             <Container>
               <Row className=" justify-content-center">
                 {this.state.favoriteAnime.map((item, idx) => {
@@ -340,7 +347,10 @@ export class FavoriteList extends Component {
 
         {this.state.favoriteGame.length !== 0 && (
           <div className="card-div">
-            <h2>Favorite Games</h2>
+            <hr />
+            <h2 className="h2class">Favorite Games</h2>
+            <hr />
+
             <Container>
               <Row className=" justify-content-center">
                 {this.state.favoriteGame.map((item, idx) => {
