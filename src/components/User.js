@@ -25,9 +25,9 @@ const User = () => {
     </div>
   ) : (
     <div>
-      <div className="userborder">
-        <h3 className="userh3">Please Log In </h3>
-        <button className="userlogin" onClick={() => loginWithRedirect()}>
+      <div className="userborderPRO">
+        <h3 className="userh3PRO">Please Log In </h3>
+        <button className="userloginPRO" onClick={() => loginWithRedirect()}>
           Log In
         </button>
       </div>

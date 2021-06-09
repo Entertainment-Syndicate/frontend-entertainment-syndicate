@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
-.userlogin {
+.userloginPRO {
   background-color: rgba(255, 0, 0, 0.815) !important ;
   border-radius: 5px !important;
   border: none;
@@ -14,7 +14,7 @@
   width: 100px;
 }
 
-.userh3 {
+.userh3PRO {
   /* margin-left: -20px; */
   color: white;
 }
@@ -22,7 +22,7 @@
   padding-top: 15px;
   /* margin-top: 300px !important; */
 }
-.userborder {
+.userborderPRO {
   margin-top: 350px !important;
   margin-bottom: 250px !important;
   margin-left: 30%;
