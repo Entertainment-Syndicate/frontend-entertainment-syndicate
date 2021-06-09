@@ -35,7 +35,7 @@ export class FavoriteList extends Component {
   componentDidMount = () => {
     let email = this.props.auth0.user.email;
     axios
-      .get(`http://localhost:3001/favorite`, { params: { email } })
+      .get(`${process.env.REACT_APP_SERVER}/favorite`, { params: { email } })
       .then((res) => {
         this.setState({
           favoriteList: res.data,
@@ -57,7 +57,7 @@ export class FavoriteList extends Component {
     console.log(type);
 
     let deleteFavorite = await axios.delete(
-      `http://localhost:3001/favorite/${index}`,
+      `${process.env.REACT_APP_SERVER}/favorite/${index}`,
       {
         params: { email: user.email, type: type },
       }
@@ -105,7 +105,7 @@ export class FavoriteList extends Component {
     console.log(feedback);
 
     let updatedFeedback = await axios.put(
-      `http://localhost:3001/feedback/${index}`,
+      `${process.env.REACT_APP_SERVER}/feedback/${index}`,
       {
         email: user.email,
         type: type,

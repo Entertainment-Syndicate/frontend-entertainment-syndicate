@@ -20,7 +20,7 @@ export class HomeFavorite extends Component {
     // console.log(this.props.auth0);
     // let email = 'yahiaqous@gmail.com';
     try {
-      let res = await axios.get(`http://localhost:3001/favorite`, {
+      let res = await axios.get(`${process.env.REACT_APP_SERVER}/favorite`, {
         params: { email },
       });
       console.log(res);
