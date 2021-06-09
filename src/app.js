@@ -13,6 +13,7 @@ import AboutUs from './components/AboutUs';
 import Home from './components/Home';
 import { withRouter } from 'react-router';
 import './app.css';
+import Feed from './components/Feed';
 
 class App extends React.Component {
   render() {
@@ -36,6 +37,10 @@ class App extends React.Component {
 
             <Route path="/user">
               <User />
+            </Route>
+
+            <Route path="/feed">
+              <Feed />
             </Route>
 
             <Route path="/about-us">
