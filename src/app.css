@@ -2,6 +2,11 @@
 
 a {
   text-decoration: none !important;
+  color: #000;
+}
+a:hover {
+  text-decoration: none !important;
+  color: #000;
 }
 .h2class {
   font-family: 'Roboto Slab', serif;
@@ -19,9 +24,14 @@ a {
   box-shadow: rgba(210, 30, 30, 0.15) 0px 20px 25px -5px,
     rgba(210, 30, 30, 0.04) 0px 10px 10px -5px;
 }
-
+.card-card:hover,
+.card-carousel:hover {
+  background-color: rgb(207, 207, 207);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+}
 .card-card {
   margin: 0 60px;
+  cursor: pointer;
 }
 
 .card-card img {
@@ -42,6 +52,7 @@ a {
   width: 18rem;
   box-shadow: rgba(210, 30, 30, 0.15) 0px 20px 25px -5px,
     rgba(210, 30, 30, 0.04) 0px 10px 10px -5px;
+  cursor: pointer;
 }
 .card-carousel img {
   height: 500px;
@@ -72,4 +83,11 @@ hr {
   color: white;
   background-color: white;
   margin-bottom: 35px !important;
+}
+.card-carousel .h5,
+.card-card .h5 {
+  /* font-size: 20px !important; */
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: rgb(5, 5, 15);
 }
