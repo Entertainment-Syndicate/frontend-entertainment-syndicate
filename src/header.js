@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from 'react-bootstrap/Navbar';
+import { Navbar, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './header.css';
 import { withAuth0 } from '@auth0/auth0-react';
@@ -11,7 +11,7 @@ import { withRouter } from 'react-router';
 class Header extends React.Component {
   render() {
     const { location } = this.props;
-    const { isAuthenticated } = this.props.auth0;
+    const { isAuthenticated, user } = this.props.auth0;
     return (
       <Navbar
         className="Navbar"
@@ -78,7 +78,15 @@ class Header extends React.Component {
         </Link>
         {/* TODO: if the user is logged in, render the `LogoutButton` - if the user is logged out, render the `LoginButton` */}
         {isAuthenticated ? (
-          <LogoutButton className="Button" />
+          <span>
+            <LogoutButton className="Button" />
+            <Image
+              className="profilePicHeader"
+              src={user.picture}
+              alt={user.name}
+              roundedCircle
+            />
+          </span>
         ) : (
           <LoginButton className="Button" />
         )}

@@ -13,7 +13,7 @@
   position: absolute;
   top: 30px;
   z-index: 4;
-  left: 11%;
+  left: 10%;
   display: inline;
 }
 
@@ -27,8 +27,8 @@
 
 .navs,
 .active-navbar {
-  margin-left: 45px;
-  margin-right: 45px;
+  margin-left: 28px;
+  margin-right: 28px;
   padding: 5px;
   padding-left: 12px;
   padding-right: 12px;
@@ -68,4 +68,12 @@
 .name {
   font-size: 27px;
   margin-right: 50px;
+}
+
+.profilePicHeader {
+  width: 33px !important;
+  height: 33px !important;
+  position: relative;
+  right: 20px !important;
+  bottom: 2px;
 }

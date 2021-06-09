@@ -1,0 +1,28 @@
+.profilePic {
+  width: 50px !important;
+  height: 50px !important;
+  float: left !important;
+}
+
+.feedTitle {
+  margin-top: 140px;
+}
+.something {
+  margin-bottom: 125px !important;
+  margin-top: 125px !important;
+}
+
+.imgFeed {
+  height: 430px !important;
+}
+
+.userNameFeed {
+  padding-top: 14px;
+  position: relative;
+  right: 20px;
+  font-size: 18px;
+}
+/* .feedFeedback {
+  height: 60%;
+  vertical-align: middle;
+} */
