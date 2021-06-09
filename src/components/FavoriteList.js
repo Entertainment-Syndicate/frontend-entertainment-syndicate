@@ -13,6 +13,7 @@ import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
 import Feedback from './Feedback';
 import '../CSS/FavoriteList.css';
+import './favoriteList.css';
 
 export class FavoriteList extends Component {
   constructor(props) {
@@ -176,23 +177,31 @@ export class FavoriteList extends Component {
                                   </Accordion.Toggle>
                                   <Accordion.Collapse eventKey="0">
                                     <Card.Body>
-                                      <Card.Text>
-                                        Description: {item.description}
-                                      </Card.Text>
-                                      <Card.Text>Date: {item.date}</Card.Text>
-                                      <Card.Text>Type: {item.type}</Card.Text>
-                                      <Card.Text>
-                                        Category: {item.category}
-                                      </Card.Text>
-                                      <Card.Text>
-                                        Vote Average: {item.voteAverage}
-                                      </Card.Text>
-                                      <Card.Text>
-                                        Vote Count: {item.voteCount}
-                                      </Card.Text>
-                                      <Card.Text>
-                                        Popularity: {item.popularity}
-                                      </Card.Text>
+                                      <p>
+                                        <span>Description:</span>
+                                        {item.description}
+                                      </p>
+                                      <p>
+                                        <span>Date:</span> {item.date}
+                                      </p>
+                                      <p>
+                                        <span>Type:</span> {item.type}
+                                      </p>
+                                      <p>
+                                        <span>Category:</span> {item.category}
+                                      </p>
+                                      <p>
+                                        <span>Vote Average:</span>{' '}
+                                        {item.voteAverage}
+                                      </p>
+                                      <p>
+                                        <span>Vote Count:</span>{' '}
+                                        {item.voteCount}
+                                      </p>
+                                      <p>
+                                        <span>Popularity:</span>{' '}
+                                        {item.popularity}
+                                      </p>
                                     </Card.Body>
                                   </Accordion.Collapse>
                                 </Card>
@@ -231,7 +240,7 @@ export class FavoriteList extends Component {
                                     )
                                   }
                                 >
-                                  Add Your Review
+                                  Review
                                 </Button>
                               </Card.Body>
                             </div>
@@ -283,13 +292,28 @@ export class FavoriteList extends Component {
                                   </Accordion.Toggle>
                                   <Accordion.Collapse eventKey="0">
                                     <Card.Body>
-                                      <p>Description: {item.description}</p>
-                                      <p>Date: {item.date}</p>
-                                      <p>Type: {item.type}</p>
-                                      <p>Category: {item.category}</p>
-                                      <p>Episodes: {item.episodes}</p>
-                                      <p>Score: {item.score}</p>
-                                      <p>Rating: {item.rate}</p>
+                                      <p>
+                                        <span>Description:</span>{' '}
+                                        {item.description}
+                                      </p>
+                                      <p>
+                                        <span>Date:</span> {item.date}
+                                      </p>
+                                      <p>
+                                        <span>Type:</span> {item.type}
+                                      </p>
+                                      <p>
+                                        <span>Category:</span> {item.category}
+                                      </p>
+                                      <p>
+                                        <span>Episodes:</span> {item.episodes}
+                                      </p>
+                                      <p>
+                                        <span>Score:</span> {item.score}
+                                      </p>
+                                      <p>
+                                        <span>Rating:</span> {item.rate}
+                                      </p>
                                       <a href={item.watchURL}>Watch Here</a>
                                     </Card.Body>
                                   </Accordion.Collapse>
@@ -329,7 +353,7 @@ export class FavoriteList extends Component {
                                     )
                                   }
                                 >
-                                  Add Your Review
+                                  Review
                                 </Button>
                               </Card.Body>
                             </div>
@@ -378,23 +402,28 @@ export class FavoriteList extends Component {
                                   </Accordion.Toggle>
                                   <Accordion.Collapse eventKey="0">
                                     <Card.Body>
-                                      <Card.Text>
-                                        Description: {item.description}
-                                      </Card.Text>
-                                      <Card.Text>Date: {item.date}</Card.Text>
-                                      <Card.Text>Type: {item.type}</Card.Text>
-                                      <Card.Text>
-                                        Category: {item.category}
-                                      </Card.Text>
-                                      <Card.Text>
-                                        Platform: {item.platform}
-                                      </Card.Text>
-                                      <Card.Text>
-                                        Publisher: {item.publisher}
-                                      </Card.Text>
-                                      <Card.Text>
-                                        Developer: {item.developer}
-                                      </Card.Text>
+                                      <p>
+                                        <span>Description:</span>{' '}
+                                        {item.description}
+                                      </p>
+                                      <p>
+                                        <span>Date:</span> {item.date}
+                                      </p>
+                                      <p>
+                                        <span>Type:</span> {item.type}
+                                      </p>
+                                      <p>
+                                        <span>Category:</span> {item.category}
+                                      </p>
+                                      <p>
+                                        <span>Platform:</span> {item.platform}
+                                      </p>
+                                      <p>
+                                        <span>Publisher:</span> {item.publisher}
+                                      </p>
+                                      <p>
+                                        <span>Developer:</span> {item.developer}
+                                      </p>
                                       <a href={item.installingURL}>
                                         Install from Here
                                       </a>
@@ -436,7 +465,7 @@ export class FavoriteList extends Component {
                                     )
                                   }
                                 >
-                                  Add Your Review
+                                  Review
                                 </Button>
                               </Card.Body>
                             </div>

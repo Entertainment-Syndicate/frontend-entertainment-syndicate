@@ -7,10 +7,12 @@ import Movie from '../image/MovieCover.jpg';
 import Game from '../image/GameCover2.jpg';
 import Anime from '../image/AnimeCover.jpg';
 import { Carousel } from 'react-bootstrap';
+import './Home.css';
 
 export class Home extends Component {
   render() {
-    const { isAuthenticated } = this.props.auth0;
+    const { isAuthenticated, loginWithRedirect } = this.props.auth0;
+
     return (
       <div>
         {/* <img
@@ -113,7 +115,23 @@ export class Home extends Component {
           </Carousel.Item>
         </Carousel>
         <WatchList />
-        {isAuthenticated ? <HomeFavorite /> : <Login />}
+        {isAuthenticated ? (
+          <HomeFavorite />
+        ) : (
+          <div>
+            <hr />
+            <h2 className="h2class"> Your Favorite List!</h2>
+            <hr />
+            <div className="userborder">
+              <h3 className="userh3">
+                Please Log In to see your favorite list
+              </h3>
+              <button className="userlogin" onClick={() => loginWithRedirect()}>
+                Log In
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     );
   }

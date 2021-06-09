@@ -7,6 +7,7 @@ import { withAuth0 } from '@auth0/auth0-react';
 import LogoutButton from './components/LogOutButton';
 import LoginButton from './components/LoginButton';
 import { withRouter } from 'react-router';
+
 class Header extends React.Component {
   render() {
     const { location } = this.props;
