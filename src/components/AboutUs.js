@@ -14,7 +14,8 @@ export class AboutUs extends Component {
   render() {
     return (
       <div className="bodyDiv">
-        <h3>Our team</h3>
+        <h3 className="h2class">Our team</h3>
+
         <CardColumns className="columns">
           <Card style={{ width: '18rem' }} className="cardAboutus">
             <Card.Img src={heba11} alt="" className="cardimg" />
