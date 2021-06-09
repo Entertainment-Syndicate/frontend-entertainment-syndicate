@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Modal, Form, Button, Alert } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Navbar, Modal, Form, Button } from 'react-bootstrap';
+// import { Link } from 'react-router-dom';
 import instagram from './image/instagram.png';
 import facebook from './image/facebook.png';
 
