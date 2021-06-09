@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
 a {
   text-decoration: none !important;
 }
-
+.h2class {
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: white;
+  font-size: 37px;
+  margin-top: 45px !important;
+  margin-bottom: 45px !important;
+}
 .card-card,
 .flip-card {
   height: 600px;
@@ -58,7 +68,8 @@ p {
 hr {
   margin-left: 20%;
   margin-right: 20%;
-  margin-top: 40px;
+  margin-top: 35px !important;
   color: white;
   background-color: white;
+  margin-bottom: 35px !important;
 }
