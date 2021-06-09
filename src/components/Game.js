@@ -15,7 +15,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-multi-carousel/lib/styles.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-
+import { withAuth0 } from '@auth0/auth0-react';
 export class Game extends Component {
   constructor(props) {
     super(props);
@@ -37,6 +37,8 @@ export class Game extends Component {
     });
   };
   render() {
+    const { isAuthenticated, loginWithRedirect } = this.props.auth0;
+
     return (
       <div className="card-div">
         {this.props.showAnime && this.props.showMovie && this.props.showGame ? (
@@ -178,21 +180,31 @@ export class Game extends Component {
             <Button variant="secondary" onClick={this.hideModal}>
               Close
             </Button>
-            <Button
-              variant="primary"
-              onClick={() => {
-                this.props.addToFavoriteHandler(this.state.item);
-                this.setState({
-                  displayModal: false,
-                });
-              }}
-            >
-              Add to Favorite
-            </Button>
+            {isAuthenticated ? (
+              <Button
+                variant="primary"
+                // 5- Add to Favorite Button (to database)
+                onClick={() => {
+                  this.props.addToFavoriteHandler(this.state.item);
+                  this.setState({
+                    displayModal: false,
+                  });
+                }}
+              >
+                Add to Favorite
+              </Button>
+            ) : (
+              <Button
+                style={{ backgroundColor: 'red', border: 'none' }}
+                onClick={() => loginWithRedirect()}
+              >
+                Add to Favorite
+              </Button>
+            )}
           </Modal.Footer>
         </Modal>
       </div>
     );
   }
 }
-export default Game;
+export default withAuth0(Game);

@@ -15,6 +15,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-multi-carousel/lib/styles.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import LoginButton from './LoginButton.js';
+import { withAuth0 } from '@auth0/auth0-react';
 
 export class Anime extends Component {
   constructor(props) {
@@ -38,6 +40,7 @@ export class Anime extends Component {
   };
 
   render() {
+    const { isAuthenticated, loginWithRedirect } = this.props.auth0;
     return (
       <div className="card-div">
         {/* If All types must be shown  => render by Carousel else render by Cards*/}
@@ -188,22 +191,31 @@ export class Anime extends Component {
             <Button variant="secondary" onClick={this.hideModal}>
               Close
             </Button>
-            <Button
-              variant="primary"
-              // 5- Add to Favorite Button (to database)
-              onClick={() => {
-                this.props.addToFavoriteHandler(this.state.item);
-                this.setState({
-                  displayModal: false,
-                });
-              }}
-            >
-              Add to Favorite
-            </Button>
+            {isAuthenticated ? (
+              <Button
+                variant="primary"
+                // 5- Add to Favorite Button (to database)
+                onClick={() => {
+                  this.props.addToFavoriteHandler(this.state.item);
+                  this.setState({
+                    displayModal: false,
+                  });
+                }}
+              >
+                Add to Favorite
+              </Button>
+            ) : (
+              <Button
+                style={{ backgroundColor: 'red', border: 'none' }}
+                onClick={() => loginWithRedirect()}
+              >
+                Add to Favorite
+              </Button>
+            )}
           </Modal.Footer>
         </Modal>
       </div>
     );
   }
 }
-export default Anime;
+export default withAuth0(Anime);

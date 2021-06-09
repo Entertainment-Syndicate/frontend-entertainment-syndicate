@@ -6,7 +6,6 @@ import './user.css';
 
 const User = () => {
   const { user, isAuthenticated } = useAuth0();
-
   const { loginWithRedirect } = useAuth0();
 
   return isAuthenticated ? (

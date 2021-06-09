@@ -20,7 +20,7 @@ export class AboutUs extends Component {
   render() {
     return (
       <div className="bodyDiv">
-        <h3 className="h2class">Our team</h3>
+        <h3 className="h2class">The Syndicate</h3>
         <Container fluid="md">
           <Row className=" justify-content-center">
             {/* <CardColumns className="columns"> */}
@@ -28,7 +28,7 @@ export class AboutUs extends Component {
               <Card style={{ width: '18rem' }} className="cardAboutus">
                 <Card.Img src={heba11} alt="" className="cardimg" />
                 <Card.Body>
-                  <Card.Title>HIBA SALEM</Card.Title>
+                  <Card.Title>Hiba Salem</Card.Title>
                   <Card.Text>
                     I am an architect and I am really excited to be a software
                     developer
@@ -51,7 +51,7 @@ export class AboutUs extends Component {
               <Card style={{ width: '18rem' }} className="cardAboutus">
                 <Card.Img src={dana11} alt="" className="cardimg" />
                 <Card.Body>
-                  <Card.Title>DANA YOUNIS</Card.Title>
+                  <Card.Title>Dana Younis</Card.Title>
                   <Card.Text>
                     Civil engineer planning to become a software developer
                   </Card.Text>
@@ -74,7 +74,7 @@ export class AboutUs extends Component {
                 <Card.Img src={yahia} alt="" className="cardimg" />
 
                 <Card.Body>
-                  <Card.Title>YAHIA AL-QOUS</Card.Title>
+                  <Card.Title>Yahia Al-Qous</Card.Title>
                   <Card.Text>
                     Architect attended to be a front-end developer
                   </Card.Text>
