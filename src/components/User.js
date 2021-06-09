@@ -5,7 +5,7 @@ import '../CSS/FavoriteList.css';
 import './user.css';
 
 const User = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated } = useAuth0();
 
   const { loginWithRedirect } = useAuth0();
 

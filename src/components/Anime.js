@@ -3,9 +3,9 @@ import {
   Card,
   Button,
   CardGroup,
-  CardColumns,
+  // CardColumns,
   Modal,
-  CardDeck,
+  // CardDeck,
   Container,
   Row,
   Col,
@@ -153,21 +153,33 @@ export class Anime extends Component {
           <Modal.Header closeButton>
             <Modal.Title>{this.state.item.title}</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body className="modalText">
             <img src={this.state.item.image} alt={this.state.item.title}></img>
             <br></br>
-            <p>Description: {this.state.item.description}</p>
-
-            <p>Date: {this.state.item.date}</p>
-
-            <p>Type: {this.state.item.type}</p>
-
-            <p>Category: {this.state.item.category}</p>
-
-            <p>Episodes: {this.state.item.episodes}</p>
+            <p>
+              <span>Description:</span> {this.state.item.description}
+            </p>
 
             <p>
-              Score & Rating: {this.state.item.score} ,{this.state.item.rate}
+              <span>Date:</span> {this.state.item.date}
+            </p>
+
+            <p>
+              <span>Type:</span> {this.state.item.type}
+            </p>
+
+            <p>
+              <span>Category: </span> {this.state.item.category}
+            </p>
+
+            <p>
+              <span>Episodes: </span>
+              {this.state.item.episodes}
+            </p>
+
+            <p>
+              <span>Score & Rating: </span>
+              {this.state.item.score} ,{this.state.item.rate}
             </p>
 
             <a href={this.state.item.watchURL}>Watch Here</a>

@@ -1,12 +1,12 @@
 /* eslint-disable eqeqeq */
 import React, { Component } from 'react';
 import {
-  Navbar,
-  Nav,
+  // Navbar,
+  // Nav,
   Button,
   ButtonGroup,
-  ToggleButton,
-  Spinner,
+  // ToggleButton,
+  // Spinner,
   Form,
 } from 'react-bootstrap';
 import Anime from './Anime';
@@ -180,11 +180,11 @@ export class Explore extends Component {
         <ButtonGroup className="Exploreform">
           {this.state.radios.map((radio, idx) => (
             <Button
-              className="button-button"
+              className="buttonhh"
               key={idx}
               id={`radio-${idx}`}
               type="radio"
-              // variant={'outline-success'}
+              variant={'outline-danger'}
               name="radio"
               value={radio.value}
               // Functions from Radio Component by Default

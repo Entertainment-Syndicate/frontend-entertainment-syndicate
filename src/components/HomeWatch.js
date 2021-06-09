@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { withAuth0 } from '@auth0/auth0-react';
+// import { withAuth0 } from '@auth0/auth0-react';
 import './Home.css';
 import { Card, CardGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';

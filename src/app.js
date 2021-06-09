@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './header';
-import IsLoadingAndError from './IsLoadingAndError';
+// import IsLoadingAndError from './IsLoadingAndError';
 import Footer from './footer';
 import { withAuth0 } from '@auth0/auth0-react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -17,7 +17,7 @@ import './app.css';
 class App extends React.Component {
   render() {
     console.log('app', this.props);
-    const { router, params, location, routes } = this.props;
+    const { location } = this.props;
     console.log(location);
     const { isAuthenticated } = this.props.auth0;
     return (
