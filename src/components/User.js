@@ -12,9 +12,13 @@ const User = () => {
   return isAuthenticated ? (
     <div>
       <div className="userHeader">
-        <img id="profilePicture" src={user.picture} alt={user.name} />
-        <h2 className="userh2"> Name: {user.name}</h2>
-        <p> Email: {user.email}</p>
+        <div className="user-profile">
+          <img id="profilePicture" src={user.picture} alt={user.name} />
+          <div>
+            <h2 className="userh2"> Name: {user.name}</h2>
+            <p> Email: {user.email}</p>
+          </div>
+        </div>
       </div>
       <div className="FavCards">
         <FavoriteList />

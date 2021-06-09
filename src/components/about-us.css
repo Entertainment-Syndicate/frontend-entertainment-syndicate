@@ -1,11 +1,13 @@
 .cardimg {
-  width: 279px;
+  width: 100%;
   height: 300px;
   object-fit: cover;
 }
 
 .bodyDiv {
   margin-top: 150px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 .columns {
   margin-left: 15%;
@@ -16,4 +18,14 @@ h3 {
   margin: 30px 60px;
   text-align: center;
   margin-bottom: 70px !important;
+}
+.cardAboutus {
+  height: 500px;
+  margin-bottom: 30px;
+}
+.aboutus-icon {
+  margin-top: 20px;
+}
+.aboutus-icon a {
+  margin: 0px 5px;
 }

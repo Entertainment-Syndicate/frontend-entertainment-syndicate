@@ -26,28 +26,40 @@ class Header extends React.Component {
           Entertainment Syndicate
         </Navbar.Brand>
         <Link
-          className={location.pathname === '/' ? `active-navbar` : `navs`}
+          className={
+            location.pathname === '/'
+              ? `active-navbar header-link`
+              : `navs header-link`
+          }
           to="/"
         >
           Home
         </Link>
         <Link
           className={
-            location.pathname === '/explore' ? `active-navbar` : `navs`
+            location.pathname === '/explore '
+              ? `active-navbar header-link`
+              : `navs header-link`
           }
           to="/explore"
         >
           Explore
         </Link>
         <Link
-          className={location.pathname === '/user' ? `active-navbar` : `navs`}
+          className={
+            location.pathname === '/user'
+              ? `active-navbar header-link`
+              : `navs header-link`
+          }
           to="/user"
         >
           Profile
         </Link>
         <Link
           className={
-            location.pathname === '/about-us' ? `active-navbar` : `navs`
+            location.pathname === '/about-us'
+              ? `active-navbar header-link`
+              : `navs header-link`
           }
           to="/about-us"
         >

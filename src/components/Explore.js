@@ -14,6 +14,7 @@ import Game from './Game';
 import Movie from './Movie';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
+import PacmanLoader from 'react-spinners/PacmanLoader';
 import './explore.css';
 
 export class Explore extends Component {
@@ -291,9 +292,16 @@ export class Explore extends Component {
             </div>
           </div>
         ) : (
-          <div>
-            <Spinner animation="grow" size="sm" />
-            <Spinner animation="grow" />
+          <div className="spinner">
+            {/* <Spinner animation="grow" size="sm" />
+            <Spinner animation="grow" /> */}
+            <PacmanLoader
+              color="rgba(255, 0, 0, 0.801)"
+              loading={true}
+              css=""
+              size={70}
+              className="pacmanLoader"
+            />
           </div>
         )}
       </div>
