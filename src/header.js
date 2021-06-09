@@ -58,6 +58,16 @@ class Header extends React.Component {
         </Link>
         <Link
           className={
+            location.pathname === '/feed'
+              ? `active-navbar header-link`
+              : `navs header-link`
+          }
+          to="/feed"
+        >
+          Feed
+        </Link>
+        <Link
+          className={
             location.pathname === '/about-us'
               ? `active-navbar header-link`
               : `navs header-link`
