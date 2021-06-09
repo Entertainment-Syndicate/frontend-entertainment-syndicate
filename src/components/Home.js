@@ -6,7 +6,7 @@ import Login from '../login';
 import Movie from '../image/MovieCover.jpg';
 import Game from '../image/GameCover2.jpg';
 import Anime from '../image/AnimeCover.jpg';
-import { Image, Carousel } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
 
 export class Home extends Component {
   render() {

@@ -9,7 +9,7 @@ import LoginButton from './components/LoginButton';
 import { withRouter } from 'react-router';
 class Header extends React.Component {
   render() {
-    const { router, params, location, routes } = this.props;
+    const { location } = this.props;
     const { isAuthenticated } = this.props.auth0;
     return (
       <Navbar
@@ -37,7 +37,7 @@ class Header extends React.Component {
         </Link>
         <Link
           className={
-            location.pathname === '/explore '
+            location.pathname === '/explore'
               ? `active-navbar header-link`
               : `navs header-link`
           }

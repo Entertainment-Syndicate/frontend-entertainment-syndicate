@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {
   Card,
-  CardColumns,
-  CardGroup,
+  // CardColumns,
   Container,
   Row,
   Col,
