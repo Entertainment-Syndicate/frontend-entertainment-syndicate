@@ -14,6 +14,7 @@ import Game from './Game';
 import Movie from './Movie';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
+import PacmanLoader from 'react-spinners/PacmanLoader';
 import './explore.css';
 
 export class Explore extends Component {
@@ -232,7 +233,11 @@ export class Explore extends Component {
 
               {this.state.showMovie && (
                 <div className="card-div">
-                  <h2>Movies</h2>
+                  <hr />
+
+                  <h2 className="h2class">Movies</h2>
+                  <hr />
+
                   <Movie
                     movieData={this.state.movieData}
                     showAnime={this.state.showAnime}
@@ -249,7 +254,11 @@ export class Explore extends Component {
 
               {this.state.showAnime && (
                 <div className="card-div">
-                  <h2>Anime</h2>
+                  <hr />
+
+                  <h2 className="h2class">Anime</h2>
+                  <hr />
+
                   <Anime
                     animeData={this.state.animeData}
                     showAnime={this.state.showAnime}
@@ -266,7 +275,10 @@ export class Explore extends Component {
 
               {this.state.showGame && (
                 <div className="card-div">
-                  <h2>Games</h2>
+                  <hr />
+                  <h2 className="h2class">Games</h2>
+                  <hr />
+
                   <Game
                     gameData={this.state.gameData}
                     showAnime={this.state.showAnime}
@@ -280,9 +292,16 @@ export class Explore extends Component {
             </div>
           </div>
         ) : (
-          <div>
-            <Spinner animation="grow" size="sm" />
-            <Spinner animation="grow" />
+          <div className="spinner">
+            {/* <Spinner animation="grow" size="sm" />
+            <Spinner animation="grow" /> */}
+            <PacmanLoader
+              color="rgba(255, 0, 0, 0.801)"
+              loading={true}
+              css=""
+              size={70}
+              className="pacmanLoader"
+            />
           </div>
         )}
       </div>

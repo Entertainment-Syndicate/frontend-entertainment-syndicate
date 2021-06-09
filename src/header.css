@@ -1,17 +1,19 @@
 * {
   box-sizing: border-box;
 }
-a {
-  color: rgb(255, 255, 255);
+/* a {
+
+} */
+.header-link {
+  color: rgb(255, 255, 255) !important;
   font-size: larger;
 }
-
 .Navbar {
   background-color: rgba(190, 68, 68, 0) !important;
   position: absolute;
   top: 30px;
   z-index: 4;
-  left: 11%;
+  left: 13%;
   display: inline;
 }
 

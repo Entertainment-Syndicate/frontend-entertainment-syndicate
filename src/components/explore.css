@@ -30,3 +30,14 @@
   background-color: rgba(255, 255, 255, 0);
   border: none;
 }
+.spinner {
+  height: 570px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.pacmanLoader {
+  position: absolute;
+  bottom: 500px;
+}
