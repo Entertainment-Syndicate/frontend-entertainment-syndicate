@@ -8,8 +8,10 @@ import Game from '../image/GameCover2.jpg';
 import Anime from '../image/AnimeCover.jpg';
 import { Carousel } from 'react-bootstrap';
 import './Home.css';
+import axios from 'axios';
 
 export class Home extends Component {
+
   render() {
     const { isAuthenticated, loginWithRedirect } = this.props.auth0;
 
@@ -36,8 +38,6 @@ export class Home extends Component {
             <Carousel.Caption>
               <h1>Movie Collections</h1>
               <h3>Explore the best movies from around the world!</h3>
-              <br />
-              <br />
               <br />
               <br />
               <br />
@@ -78,8 +78,6 @@ export class Home extends Component {
               <br />
               <br />
               <br />
-              <br />
-              <br />
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -98,8 +96,6 @@ export class Home extends Component {
             <Carousel.Caption>
               <h1>Game Collections</h1>
               <h3>Live your imagination in reality!</h3>
-              <br />
-              <br />
               <br />
               <br />
               <br />
