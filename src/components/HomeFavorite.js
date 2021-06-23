@@ -17,12 +17,16 @@ export class HomeFavorite extends Component {
 
   componentDidMount = async () => {
     let email = this.props.auth0.user.email;
-    // console.log(this.props.auth0);
-    // let email = 'yahiaqous@gmail.com';
+ 
     try {
+      
+      await axios.post(`${process.env.REACT_APP_SERVER}/loginNew`,{email});
+
       let res = await axios.get(`${process.env.REACT_APP_SERVER}/favorite`, {
         params: { email },
+
       });
+
       console.log(res);
       this.setState({
         favoriteList: [
@@ -35,14 +39,14 @@ export class HomeFavorite extends Component {
     } catch (error) {
       console.log('the catch');
     }
+
+  
   };
 
   render() {
     return (
       <div className="card-div">
-        {/* {(this.state.favoriteList[0] !== undefined ||
-          this.state.favoriteList[1] !== undefined ||
-          this.state.favoriteList[2] !== undefined) && ( */}
+
         {(this.state.favoriteList[0].length !== 0 ||
           this.state.favoriteList[1].length !== 0 ||
           this.state.favoriteList[2].length !== 0) && (
