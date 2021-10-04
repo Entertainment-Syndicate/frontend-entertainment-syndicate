@@ -3,14 +3,49 @@
 ## Projetc Description.
 As the name indicates this website is about entertainment and fun, the main idea is to allow the users to search for their favorite Movies, Animes, and Games and add them to their favorite, and if the users want they can write a comment and share what they picked to others.
 
-## Project Members.
-1. Mahmoud Saadeh
-1. Abdelrahman Al Daour
-1. Dana Younes
-1. Yahia Qous
-1. Hiba Salem
 
-[Projetc Backtend](https://github.com/Entertainment-Syndicate/backend-entertainment-syndicate).
+![home page](src/image/301.png)
+
+[Demo Video](https://www.youtube.com/watch?v=kLEzGiks3Fw)  
+[Deployment ](https://entertainment-syndicate.netlify.app/)   
+[Project Backtend](https://github.com/Entertainment-Syndicate/backend-entertainment-syndicate)
+
+
+## Team Members
+- Mahmoud Saadeh
+- Abdelrahman Al Daour
+- Dana Younes
+- Yahia Qous
+- Hiba Salem
+
+## Main Features 
+- Authentication and Authorization (auth0)
+- Multiple filtering (based on type or categories or both)
+- Add to favourite list and remove from it. 
+- Add a public review in addition to edit and delete it. 
+
+
+## Resources and Technologies
+a Full-stack Web app that offers collections of the best movies, anime, and games, also a list of personal favourites. 
+- Built with React components to communicate with a Node.js Express API server and MongoDB in addition to pure CSS and React-Bootstrap.
+
+- Front end
+
+  - React.Js
+  - React Bootstrap 
+  - Auth0 
+
+- Backend
+
+  - Node.js
+  - MongoDB
+  - Express
+  - Auth0
+  - APIs 
+    - [api.jikan.moe](api.jikan.moe)
+    - [api.themoviedb](api.themoviedb)
+    - [freetogame.com](freetogame.com)
+
 
 ## Wireframes
 
